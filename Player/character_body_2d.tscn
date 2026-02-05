@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cb84joushd82x"]
+[gd_scene format=3 uid="uid://phn6t8twewhc"]
 
 [ext_resource type="Script" uid="uid://csikr4awb1vyv" path="res://Player/character_body_2d.gd" id="1_v8jqv"]
 [ext_resource type="Texture2D" uid="uid://n3b5tkdvnp1o" path="res://icon.svg" id="2_vvw5e"]
@@ -14,7 +14,8 @@ script = ExtResource("1_v8jqv")
 shape = SubResource("CapsuleShape2D_186t8")
 debug_color = Color(0.28634495, 0.173441, 0.4204513, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=510829925]
-position = Vector2(-0.9999962, 2.000002)
-scale = Vector2(0.9160154, 0.7539064)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1012374990]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=881698031]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_vvw5e")
