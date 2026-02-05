@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cp3gpekdfc4u1"]
 
 [ext_resource type="Script" uid="uid://5yup77182aoo" path="res://menu/main_menu.gd" id="1_gtid3"]
-[ext_resource type="Texture2D" uid="uid://c3ahmia512n3w" path="res://menu/image.png" id="1_wugcc"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="2_gtid3"]
+[ext_resource type="Texture2D" uid="uid://08fpyfhbrsks" path="res://2222.png" id="2_mriae"]
 [ext_resource type="Script" uid="uid://cuenpy74ige38" path="res://menu/audio_control.gd" id="4_257up"]
 [ext_resource type="AudioStream" uid="uid://b6occgh3y8vj4" path="res://menu/brutal hudba.mp3" id="4_dnfjo"]
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="5_mriae"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wugcc"]
-texture = ExtResource("1_wugcc")
+texture = ExtResource("2_mriae")
 modulate_color = Color(0.41981265, 0.41981325, 0.4198131, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtjmy"]
