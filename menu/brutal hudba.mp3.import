@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6occgh3y8vj4"
+path="res://.godot/imported/brutal hudba.mp3-cb59c43620c2e89fcce31f99a978fa45.mp3str"
+
+[deps]
+
+source_file="res://menu/brutal hudba.mp3"
+dest_files=["res://.godot/imported/brutal hudba.mp3-cb59c43620c2e89fcce31f99a978fa45.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
