@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://o8foele5h6u1"]
+
+[ext_resource type="Texture2D" uid="uid://dhg6no1qmo2a0" path="res://Images/platform1.png" id="1_3ia7n"]
+[ext_resource type="Texture2D" uid="uid://ccwqhmfkqmdvd" path="res://Images/platform2.png" id="2_xts04"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ye5du"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05d14"]
+texture = ExtResource("1_3ia7n")
+7:10/size_in_atlas = Vector2i(48, 11)
+7:10/0 = 0
+7:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-351.23962, -67.35537, 357.85126, -74.79338, 351.2397, -7.851242, 379.33887, 27.685944, 345.45453, 51.652893, 343.80164, 74.79338, 126.44629, 78.92561, 11.570251, 69.8347, -353.81305, 68.92462, -370.2479, 52.47934, -372.72723, -43.388428)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6d8e7"]
+texture = ExtResource("2_xts04")
+8:4/size_in_atlas = Vector2i(48, 18)
+8:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_twagh"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_ye5du")
+physics_layer_1/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_05d14")
+sources/1 = SubResource("TileSetAtlasSource_6d8e7")
+
+[node name="TileMapLayer" type="TileMapLayer" unique_id=1400714509]
+tile_map_data = PackedByteArray(0, 0, 29, 0, 15, 0, 0, 0, 7, 0, 10, 0, 0, 0, 101, 0, 33, 0, 0, 0, 7, 0, 10, 0, 0, 0, 173, 0, 7, 0, 0, 0, 7, 0, 10, 0, 0, 0)
+tile_set = SubResource("TileSet_twagh")
