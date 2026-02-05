@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cxgdn85ox521a"]
+
+[ext_resource type="PackedScene" uid="uid://cb84joushd82x" path="res://Player/character_body_2d.tscn" id="1_57e3w"]
+[ext_resource type="Texture2D" uid="uid://n3b5tkdvnp1o" path="res://icon.svg" id="2_ty8by"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ty8by"]
+distance = -125.0
+
+[node name="Node2D" type="Node2D" unique_id=1505552328]
+
+[node name="Player" parent="." unique_id=2050266436 instance=ExtResource("1_57e3w")]
+position = Vector2(574, 320)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=453892406]
+position = Vector2(566, 333)
+rotation = -3.1415925
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1037833034]
+position = Vector2(0, -10)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_ty8by")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=135162489]
+position = Vector2(-358.00006, 15.000061)
+scale = Vector2(2.8739827, 1.3186291)
+texture = ExtResource("2_ty8by")
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=752434874]
+position = Vector2(566, 333)
+rotation = -3.1415925
