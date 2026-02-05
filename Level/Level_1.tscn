@@ -1,11 +1,24 @@
 [gd_scene format=4 uid="uid://cocupvx1iq18c"]
 
+[ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_b2ndw"]
 [ext_resource type="PackedScene" uid="uid://phn6t8twewhc" path="res://Player/character_body_2d.tscn" id="1_ggyr1"]
 [ext_resource type="PackedScene" uid="uid://o8foele5h6u1" path="res://Level/tile_map_layer.tscn" id="2_oqwaf"]
 [ext_resource type="Texture2D" uid="uid://x4ov6a2danpx" path="res://Images/backgoundsceneee.png" id="3_oqwaf"]
 [ext_resource type="Script" uid="uid://nhl6jtpkbas8" path="res://Level/area_2d.gd" id="4_4ouur"]
 [ext_resource type="Texture2D" uid="uid://n3b5tkdvnp1o" path="res://icon.svg" id="5_b2ndw"]
 [ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="6_b2ndw"]
+
+[sub_resource type="GDScript" id="GDScript_ckrbt"]
+script/source = "extends Area2D
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and body.has_key == true:
+		queue_free()
+		var key = body.get_node_or_null(\"Key\")
+		if key:
+			key.queue_free()
+	
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ckrbt"]
 radius = 50.990196
@@ -56,6 +69,11 @@ func _process(delta):
 
 [node name="Level2" type="Node2D" unique_id=434574265]
 
+[node name="Door" parent="." unique_id=1837347098 instance=ExtResource("1_b2ndw")]
+position = Vector2(680.00006, -705)
+scale = Vector2(15, 15)
+script = SubResource("GDScript_ckrbt")
+
 [node name="Player" parent="." unique_id=2050266436 instance=ExtResource("1_ggyr1")]
 position = Vector2(781.00006, 699.00006)
 scale = Vector2(1.4, 1.4)
@@ -73,22 +91,25 @@ modulate = Color(0.7953939, 0.79539394, 0.7953939, 1)
 self_modulate = Color(0.81240565, 0.8124055, 0.8124055, 1)
 z_index = -4
 position = Vector2(-45.499878, 86)
-scale = Vector2(1.8136718, 1.29625)
+scale = Vector2(1.8, 1.2)
 texture = ExtResource("3_oqwaf")
+metadata/_edit_lock_ = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1556154217]
-position = Vector2(1468, 575)
+[node name="Key" type="Area2D" parent="." unique_id=1556154217]
+position = Vector2(1225, -671)
 script = ExtResource("4_4ouur")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=850169483]
+[node name="Sprite2D" type="Sprite2D" parent="Key" unique_id=850169483]
 position = Vector2(1, 1)
 texture = ExtResource("5_b2ndw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1167165645]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=1167165645]
 position = Vector2(-3, 2)
 shape = SubResource("CircleShape2D_ckrbt")
 
 [node name="pause" parent="." unique_id=1949486921 instance=ExtResource("6_b2ndw")]
+visible = false
 script = SubResource("GDScript_b2ndw")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
+[connection signal="body_entered" from="Key" to="Key" method="_on_body_entered"]
