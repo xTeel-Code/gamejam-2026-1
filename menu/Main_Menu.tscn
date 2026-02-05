@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="2_gtid3"]
 [ext_resource type="Script" uid="uid://cuenpy74ige38" path="res://menu/audio_control.gd" id="4_257up"]
 [ext_resource type="AudioStream" uid="uid://b6occgh3y8vj4" path="res://menu/brutal hudba.mp3" id="4_dnfjo"]
+[ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="5_mriae"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wugcc"]
 texture = ExtResource("1_wugcc")
@@ -237,6 +238,18 @@ offset_right = 263.0
 offset_bottom = 87.0
 text = "music volume "
 
+[node name="Fullscreen" type="CheckButton" parent="Options" unique_id=1821436365]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 121.0
+offset_right = 247.0
+offset_bottom = 152.0
+scale = Vector2(1.5594354, 1.5594354)
+theme_override_font_sizes/font_size = 12
+button_pressed = true
+text = "fullscreen"
+script = ExtResource("5_mriae")
+
 [node name="BrutalHudba" type="AudioStreamPlayer" parent="." unique_id=1270780930]
 stream = ExtResource("4_dnfjo")
 volume_db = -12.811
@@ -248,3 +261,4 @@ bus = &"Music"
 [connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options/Label/Back" to="." method="_on_back_pressed"]
 [connection signal="value_changed" from="Options/Audio Control" to="Options/Audio Control" method="_on_value_changed"]
+[connection signal="toggled" from="Options/Fullscreen" to="Options/Fullscreen" method="_on_toggled"]
