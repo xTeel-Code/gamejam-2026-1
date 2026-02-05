@@ -233,6 +233,7 @@ audio_bus_name = "Music"
 stream = ExtResource("4_dnfjo")
 volume_db = -12.811
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
