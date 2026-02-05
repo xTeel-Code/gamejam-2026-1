@@ -14,8 +14,6 @@ script = ExtResource("1_v8jqv")
 shape = SubResource("CapsuleShape2D_186t8")
 debug_color = Color(0.28634495, 0.173441, 0.4204513, 0.41960785)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1012374990]
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=881698031]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_vvw5e")

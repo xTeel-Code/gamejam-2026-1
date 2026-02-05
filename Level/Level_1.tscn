@@ -1,0 +1,17 @@
+[gd_scene format=4 uid="uid://cocupvx1iq18c"]
+
+[ext_resource type="PackedScene" uid="uid://phn6t8twewhc" path="res://Player/character_body_2d.tscn" id="1_ggyr1"]
+[ext_resource type="PackedScene" uid="uid://o8foele5h6u1" path="res://Level/tile_map_layer.tscn" id="2_oqwaf"]
+
+[node name="Level2" type="Node2D" unique_id=434574265]
+
+[node name="Player" parent="." unique_id=2050266436 instance=ExtResource("1_ggyr1")]
+position = Vector2(-257, -13)
+
+[node name="TileMapLayer" parent="." unique_id=1400714509 instance=ExtResource("2_oqwaf")]
+position = Vector2(-155, 0)
+scale = Vector2(0.3, 0.3)
+tile_map_data = PackedByteArray("AAAu/7H/AAAHAAoAAFAu/93/AAAHAAoAAFAu/wcAAAAHAAoAAFAu/zEAAAAHAAoAAFAu/zIAAAAHAAoAAFAu/1sAAAAHAAoAAFAz/24AAAAHAAoAAABA/5r/AAAHAAoAACBe/24AAAAHAAoAAABo/5r/AAAHAAoAACCA/yYAAAAHAAoAAACA/ycAAAAHAAoAAACB/ycAAAAHAAoAAACI/24AAAAHAAoAAACS/5r/AAAHAAoAACCz/24AAAAHAAoAAAC6/5r/AAAHAAoAACDD////AAAHAAoAAADe/24AAAAHAAoAAADk/5r/AAAHAAoAACDo/00AAQAIAAQAAADr/xgAAQAIAAQAAAAIAG4AAAAHAAoAAAAMAJr/AAAHAAoAACANANv/AQAIAAQAAAAmADkAAAAHAAoAAAAvAG4AAAAHAAoAAAA2AJr/AAAHAAoAACBaAG4AAAAHAAoAAABeAJr/AAAHAAoAACB4ANr/AAAHAAoAAACEAG4AAAAHAAoAAACGAJr/AAAHAAoAACCrAG4AAAAHAAoAAACuAJr/AAAHAAoAACC0AEYAAAAHAAoAAADHAFgAAAAHAAoAAFDTAMX/AAAHAAoAAADWAG4AAAAHAAoAAADYAJr/AAAHAAoAACDlALL/AAAHAAoAAGAAAZr/AAAHAAoAACAAAW4AAAAHAAoAAAATAa3/AAAHAAoAAEATAdb/AAAHAAoAAEATAQEAAAAHAAoAAEATASsAAAAHAAoAAEATAVYAAAAHAAoAAEA=")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=424809203]
+zoom = Vector2(0.48, 0.6)
