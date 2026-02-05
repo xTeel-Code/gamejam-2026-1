@@ -229,6 +229,14 @@ value = 1.0
 script = ExtResource("4_257up")
 audio_bus_name = "Music"
 
+[node name="Label2" type="Label" parent="Options" unique_id=1684734208]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 64.0
+offset_right = 263.0
+offset_bottom = 87.0
+text = "music volume "
+
 [node name="BrutalHudba" type="AudioStreamPlayer" parent="." unique_id=1270780930]
 stream = ExtResource("4_dnfjo")
 volume_db = -12.811
