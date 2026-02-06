@@ -299,5 +299,6 @@ shape = SubResource("RectangleShape2D_fe5yt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D/Animaled_lexl" unique_id=855676231]
 stream = ExtResource("30_wnion")
+volume_db = -9.123
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
