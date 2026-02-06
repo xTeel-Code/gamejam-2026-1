@@ -317,4 +317,7 @@ autoplay = true
 expand = true
 loop = true
 
+[node name="pause" parent="." unique_id=1949486921 instance=ExtResource("26_lx6ni")]
+script = SubResource("GDScript_b2ndw")
+
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
