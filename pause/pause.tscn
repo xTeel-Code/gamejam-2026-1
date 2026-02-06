@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://cdmb1cjkacdus"]
+
+[sub_resource type="GDScript" id="GDScript_ftery"]
+script/source = "extends Control
+
+#func vypnut():
+	#options.visible = false
+	#pauza.visible = true
+func _ready():
+	hide()
+	
+func resume():
+	get_tree().paused = false
+	hide()
+
+func pause():
+	get_tree().paused = true
+	show()
+
+
+func testEsc():
+	if Input.is_action_just_pressed(\"escape\") and get_tree().paused == false:
+		pause()
+	elif Input.is_action_just_pressed(\"escape\") and get_tree().paused == true:
+		resume()
+
+func _on_resume_pressed() -> void:
+	resume()
+
+
+func _on_options_pressed() -> void:
+	pass
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_restart_pressed() -> void:
+	resume()
+	get_tree().reload_current_scene()
+
+func _process(delta):
+	testEsc()
+"
+
+[node name="pause" type="Control" unique_id=1949486921]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ftery")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=458873910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1915785156]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 238.0
+offset_top = 134.0
+offset_right = -303.5
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pauza" type="VBoxContainer" parent="PanelContainer" unique_id=1924495632]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Resume" type="Button" parent="PanelContainer/Pauza" unique_id=921130474]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PanelContainer/Pauza" unique_id=394188969]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+
+[node name="Options" type="Button" parent="PanelContainer/Pauza" unique_id=1163744450]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Options"
+
+[node name="Quit" type="Button" parent="PanelContainer/Pauza" unique_id=618357552]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=113963344]
+
+[connection signal="pressed" from="PanelContainer/Pauza/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/Pauza/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/Pauza/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="PanelContainer/Pauza/Quit" to="." method="_on_quit_pressed"]
