@@ -11,11 +11,12 @@ var health = 0
 
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 @onready var run_sfx: AudioStreamPlayer = $run_sfx
-
-
 @onready var key = $"../Key"
+
+
 func _ready():
 	start_position = global_position
+	$"../Healthbar2".set_frame(Globals.player_dmg_taken)
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		fall = heigt_before_jump - position.y
@@ -57,5 +58,4 @@ func _physics_process(delta: float) -> void:
 		else:
 			$AnimatedSprite2D.play("idle")
 			run_sfx.stop() # Zastavíme zvuk behu, ak stojíme
-
 	move_and_slide()
