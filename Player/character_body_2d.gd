@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		fall = heigt_before_jump - position.y
 		if fall < -500:
-			$"../Healthbar2".Damage(start_position)
+			$"../Healthbar2".FallDamage(start_position)
 		jump_counter = 0
 		heigt_before_jump = position.y
 	else:
