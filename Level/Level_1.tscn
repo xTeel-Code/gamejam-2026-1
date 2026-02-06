@@ -129,7 +129,7 @@ volume_db = -12.316
 autoplay = true
 bus = &"Music"
 
-[node name="Label" type="Label" parent="." unique_id=1440071278]
+[node name="health_points" type="Label" parent="." unique_id=1440071278]
 offset_left = 1847.0
 offset_top = -842.0
 offset_right = 1948.0
