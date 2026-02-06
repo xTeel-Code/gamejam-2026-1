@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bl7bflx1e38qj" path="res://Images/healthbar/swordthorns11.png" id="20_fe5yt"]
 [ext_resource type="Texture2D" uid="uid://c3d31yof3bt00" path="res://Images/healthbar/swordthorns12.png" id="21_spqro"]
 [ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="24_5ylc0"]
-[ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_b725k"]
+[ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_b725k"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_jhlv2"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_wnion"]
 [ext_resource type="Script" uid="uid://de466yueg01ow" path="res://Level/mec_hitbox.gd" id="31_ceggk"]
@@ -96,6 +96,48 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="Animation" id="Animation_jhlv2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wnion"]
+resource_name = "shiw"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ceggk"]
+_data = {
+&"RESET": SubResource("Animation_jhlv2"),
+&"shiw": SubResource("Animation_wnion")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe5yt"]
+size = Vector2(126, 198.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spqro"]
+size = Vector2(694, 77)
+
 [sub_resource type="GDScript" id="GDScript_b2ndw"]
 script/source = "extends Control
 
@@ -160,48 +202,6 @@ func _on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
 "
 
-[sub_resource type="Animation" id="Animation_jhlv2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_wnion"]
-resource_name = "shiw"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ceggk"]
-_data = {
-&"RESET": SubResource("Animation_jhlv2"),
-&"shiw": SubResource("Animation_wnion")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe5yt"]
-size = Vector2(126, 198.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_spqro"]
-size = Vector2(694, 77)
-
 [node name="Level5" type="Node2D" unique_id=434574265]
 script = ExtResource("1_1phm6")
 
@@ -250,10 +250,6 @@ position = Vector2(1225, -671)
 [node name="key" type="AudioStreamPlayer" parent="Key" unique_id=1918613743]
 stream = ExtResource("24_5ylc0")
 bus = &"SFX"
-
-[node name="pause" parent="." unique_id=1949486921 instance=ExtResource("6_b2ndw")]
-visible = false
-script = SubResource("GDScript_b2ndw")
 
 [node name="AerisMovingMountains(freetouse_com)" type="AudioStreamPlayer" parent="." unique_id=1302504571]
 stream = ExtResource("8_j7kct")
@@ -321,6 +317,10 @@ volume_db = -80.0
 autoplay = true
 expand = true
 loop = true
+
+[node name="pause" parent="." unique_id=1949486921 instance=ExtResource("6_b2ndw")]
+visible = false
+script = SubResource("GDScript_b2ndw")
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
 [connection signal="body_entered" from="Mec_Hitbox" to="Mec_Hitbox" method="_on_body_entered"]
