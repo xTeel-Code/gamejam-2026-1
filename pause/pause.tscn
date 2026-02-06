@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cdmb1cjkacdus"]
 
+[ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="1_mwgvy"]
 [ext_resource type="Script" uid="uid://cuenpy74ige38" path="res://menu/audio_control.gd" id="1_w5bci"]
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="2_mwgvy"]
 
@@ -109,6 +110,7 @@ theme_override_constants/separation = 100
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 text = "Resume"
 
@@ -116,6 +118,7 @@ text = "Resume"
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 text = "Restart"
 
@@ -123,6 +126,7 @@ text = "Restart"
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 text = "Options"
 
@@ -130,10 +134,12 @@ text = "Options"
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [node name="Options" type="Panel" parent="PanelContainer" unique_id=2061423779]
+visible = false
 custom_minimum_size = Vector2(1000, 1000)
 layout_mode = 2
 size_flags_vertical = 4
@@ -153,6 +159,7 @@ offset_bottom = 34.624023
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.81814116, 0.81814116)
+theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 text = "Back"
 
@@ -179,6 +186,7 @@ offset_left = -1.0
 offset_top = -33.0
 offset_right = 499.0
 offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 text = "music volume "
 
@@ -190,6 +198,7 @@ offset_top = 481.5
 offset_right = 517.0
 offset_bottom = 681.5
 scale = Vector2(1.5594354, 1.5594354)
+theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 button_pressed = true
 text = "fullscreen"
@@ -218,6 +227,7 @@ offset_left = -3.0
 offset_top = -26.0
 offset_right = 497.0
 offset_bottom = 174.0
+theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 text = "SFX volume "
 
