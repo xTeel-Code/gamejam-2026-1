@@ -30,18 +30,20 @@
 [ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_sfi2n"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_rrxpp"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_frrbw"]
-[ext_resource type="VideoStream" uid="uid://dudeu2utiawep" path="res://Images/background.ogv" id="31_pbwjf"]
 
 [sub_resource type="GDScript" id="GDScript_ckrbt"]
 script/source = "extends Area2D
 @onready var door: AudioStreamPlayer = $door
-var counter = 0
+
+
 func _on_body_entered(body):
-	if body.name == \"Player\":
-		counter += 1
-	if counter == 3:
+	if body.name == \"Player\" and body.has_key == true:
 		queue_free()
-"
+		var key = body.get_node_or_null(\"Key\")
+		if key:
+			door.play()
+			key.queue_free()
+			get_tree().reload_current_scene()
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ef6fe"]
 animations = [{
@@ -238,7 +240,7 @@ parameters/looping = true
 [node name="TileMapLayer" parent="." unique_id=1400714509 instance=ExtResource("22_4rcls")]
 position = Vector2(-155, -1.9999999)
 scale = Vector2(0.4, 0.4)
-tile_map_data = PackedByteArray("AADk/o//AAAHAAoAAFDk/rv/AAAHAAoAAFDk/uX/AAAHAAoAAFDk/g8AAAAHAAoAAFDk/hAAAAAHAAoAAFDk/jkAAAAHAAoAAFD2/nj/AAAHAAoAACAe/3j/AAAHAAoAACBI/3j/AAAHAAoAACBw/3j/AAAHAAoAACCa/3j/AAAHAAoAACDC/3j/AAAHAAoAACDs/3j/AAAHAAoAACAUAHj/AAAHAAoAACA8AHj/AAAHAAoAACBkAHj/AAAHAAoAACCJAKP/AAAHAAoAAACbAJD/AAAHAAoAAGD2/ogAAAAHAAoAAAAh/4gAAAAHAAoAAABL/4gAAAAHAAoAAAB2/4gAAAAHAAoAAACh/4gAAAAHAAoAAADL/4gAAAAHAAoAAADy/4gAAAAHAAoAAAAdAIgAAAAHAAoAAABHAIgAAAAHAAoAAADk/mQAAAAHAAoAAFDk/pAAAAAHAAoAAFBIAYkAAAAHAAoAAABOAV4AAAAHAAoAAEBOAYkAAAAHAAoAAEDpAIkAAAAHAAoAAAATAYkAAAAHAAoAAAA5AYkAAAAHAAoAAABOAZL/AAAHAAoAAEBOAef/AAAHAAoAAEBOARIAAAAHAAoAAEBOATsAAAAHAAoAAECOAHj/AAAHAAoAACC2AHj/AAAHAAoAACDgAHf/AAAHAAoAACAIAXf/AAAHAAoAACAYAXf/AAAHAAoAACBAAXf/AAAHAAoAACDbAKH/AQAIAAQAAADDAIkAAAAHAAoAAACZAIkAAAAHAAoAAABuAIkAAAAHAAoAAADZ/1YAAAAHAAoAAACV/3AAAQAIAAQAABD//1YAAAAHAAoAAAAmAD0AAQAIAAQAAADmAAUAAAAHAAoAAAAOAQUAAAAHAAoAAABOAb3/AAAHAAoAAEDlANP/AQAIAAQAABA1Abv/AAAHAAoAAACyABoAAQAIAAQAAACbAOn/AAAHAAoAAABYANP/AQAIAAQAABB6AD0AAAAHAAoAAACNAE8AAAAHAAoAAFCNAHUAAAAHAAoAAFC9/9b/AAAHAAoAAAAnALH/AQAIAAQAAAA=")
+tile_map_data = PackedByteArray("AADk/o//AAAHAAoAAFDk/rv/AAAHAAoAAFDk/uX/AAAHAAoAAFDk/g8AAAAHAAoAAFDk/hAAAAAHAAoAAFDk/jkAAAAHAAoAAFD2/nj/AAAHAAoAACAe/3j/AAAHAAoAACBI/3j/AAAHAAoAACBw/3j/AAAHAAoAACCa/3j/AAAHAAoAACDC/3j/AAAHAAoAACDs/3j/AAAHAAoAACAUAHj/AAAHAAoAACA8AHj/AAAHAAoAACBkAHj/AAAHAAoAACCJAKP/AAAHAAoAAACbAJD/AAAHAAoAAGD2/ogAAAAHAAoAAAAh/4gAAAAHAAoAAABL/4gAAAAHAAoAAAB2/4gAAAAHAAoAAACh/4gAAAAHAAoAAADL/4gAAAAHAAoAAADy/4gAAAAHAAoAAAAdAIgAAAAHAAoAAABHAIgAAAAHAAoAAADk/mQAAAAHAAoAAFDk/pAAAAAHAAoAAFBIAYkAAAAHAAoAAABOAV4AAAAHAAoAAEBOAYkAAAAHAAoAAEDpAIkAAAAHAAoAAAATAYkAAAAHAAoAAAA5AYkAAAAHAAoAAABOAZL/AAAHAAoAAEBOAef/AAAHAAoAAEBOARIAAAAHAAoAAEBOATsAAAAHAAoAAECOAHj/AAAHAAoAACC2AHj/AAAHAAoAACDgAHf/AAAHAAoAACAIAXf/AAAHAAoAACAYAXf/AAAHAAoAACBAAXf/AAAHAAoAACDbAKH/AQAIAAQAAADDAIkAAAAHAAoAAACZAIkAAAAHAAoAAABuAIkAAAAHAAoAAADZ/1YAAAAHAAoAAACV/3AAAQAIAAQAABD//1YAAAAHAAoAAAAmAD0AAQAIAAQAAADmAAUAAAAHAAoAAAAOAQUAAAAHAAoAAABOAb3/AAAHAAoAAEDlANP/AQAIAAQAABA1Abv/AAAHAAoAAACyABoAAQAIAAQAAACbAOn/AAAHAAoAAABYANP/AQAIAAQAABB6AD0AAAAHAAoAAACNAE8AAAAHAAoAAFCNAHUAAAAHAAoAAFC9/9b/AAAHAAoAAAAPAKn/AQAIAAQAAAA=")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=424809203]
 zoom = Vector2(0.48, 0.6)
@@ -296,15 +298,7 @@ volume_db = -9.123
 bus = &"SFX"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1933933404]
-z_index = -1
-offset_left = -2017.0
-offset_top = -863.0
-offset_right = 1900.0
-offset_bottom = 889.0
-stream = ExtResource("31_pbwjf")
-volume_db = -80.0
-autoplay = true
-expand = true
-loop = true
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
