@@ -4,6 +4,7 @@ var KeyPosition : Vector2
 @onready var key = $"../Key"
 var i = 0
 @onready var death: AudioStreamPlayer = $death
+@onready var wines: AudioStreamPlayer = $wines
 func Damage(StartPosition):
 	var main_level = get_tree().current_scene 
 	key.reparent(main_level)
@@ -12,6 +13,7 @@ func Damage(StartPosition):
 		get_tree().change_scene_to_file("res://death_screen.tscn")
 	i+=2
 	death.play()
+	wines.play()
 	set_frame(i)
 	$"../Key".global_position = keyPosition
 	$"../Player".global_position = StartPosition
