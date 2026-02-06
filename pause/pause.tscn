@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cuenpy74ige38" path="res://menu/audio_control.gd" id="1_w5bci"]
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="2_mwgvy"]
 [ext_resource type="AudioStream" uid="uid://otfp01t6qn4p" path="res://sfx/open.mp3" id="4_qhaht"]
-[ext_resource type="Script" uid="uid://td3870rahaq" path="res://pause/audio_control_2.gd" id="5_m0fkg"]
+[ext_resource type="Script" uid="uid://dftiaxdufl0we" path="res://pause/falldamage.gd" id="5_m0fkg"]
 
 [sub_resource type="GDScript" id="GDScript_ftery"]
 script/source = "extends Control
@@ -152,7 +152,6 @@ theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [node name="Options" type="Panel" parent="PanelContainer" unique_id=2061423779]
-visible = false
 custom_minimum_size = Vector2(1000, 1000)
 layout_mode = 2
 size_flags_vertical = 4
@@ -234,8 +233,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_oaeo8")
 max_value = 1.0
 step = 0.05
 value = 1.0
-script = ExtResource("5_m0fkg")
-audio_bus_name = "SFX"
 
 [node name="Label2" type="Label" parent="PanelContainer/Options/Audio Control2" unique_id=1850673048]
 custom_minimum_size = Vector2(500, 200)
@@ -252,6 +249,19 @@ text = "SFX volume "
 stream = ExtResource("4_qhaht")
 bus = &"SFX"
 
+[node name="Falldamage" type="CheckButton" parent="PanelContainer/Options" unique_id=328700377]
+custom_minimum_size = Vector2(492.3, 200)
+layout_mode = 0
+offset_left = 618.0
+offset_top = 9.5
+offset_right = 1110.3
+offset_bottom = 209.5
+scale = Vector2(0.715, 0.634)
+theme_override_fonts/font = ExtResource("1_mwgvy")
+theme_override_font_sizes/font_size = 37
+text = "Falldamage"
+script = ExtResource("5_m0fkg")
+
 [node name="drop" type="AudioStreamPlayer" parent="." unique_id=1186127552]
 stream = ExtResource("4_qhaht")
 bus = &"SFX"
@@ -264,3 +274,4 @@ bus = &"SFX"
 [connection signal="value_changed" from="PanelContainer/Options/Audio Control" to="PanelContainer/Options/Audio Control" method="_on_value_changed"]
 [connection signal="toggled" from="PanelContainer/Options/Audio Control/Label2/Fullscreen" to="PanelContainer/Options/Audio Control/Label2/Fullscreen" method="_on_toggled"]
 [connection signal="value_changed" from="PanelContainer/Options/Audio Control2" to="PanelContainer/Options/Audio Control2" method="_on_value_changed"]
+[connection signal="toggled" from="PanelContainer/Options/Falldamage" to="PanelContainer/Options/Falldamage" method="_on_toggled"]
