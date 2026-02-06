@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bnmib0o28o5ko"]
 
-[ext_resource type="Script" path="res://Level/level_3.gd" id="1_1phm6"]
+[ext_resource type="Script" uid="uid://c7eg8tna8og6w" path="res://Level/level_3.gd" id="1_1phm6"]
 [ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_b2ndw"]
 [ext_resource type="PackedScene" uid="uid://phn6t8twewhc" path="res://Player/character_body_2d.tscn" id="1_ggyr1"]
 [ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="2_bc0wh"]

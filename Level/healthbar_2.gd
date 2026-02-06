@@ -25,13 +25,18 @@ func FallDamage(StartPosition):
 			get_tree().change_scene_to_file("res://Level/Level_2.tscn")
 		if Globals.player_dmg_taken == 4:
 			get_tree().change_scene_to_file("res://Level/Level_3.tscn")
-		if Globals.player_dmg_taken == 8:
-			get_tree().change_scene_to_file("res://Level/Level_5.tscn")
 		if Globals.player_dmg_taken == 10:
 			get_tree().change_scene_to_file("res://Level/Level_6.tscn")
-		elif Globals.player_dmg_taken == 12:
-			get_tree().change_scene_to_file("res://death_screen.tscn")
 func SwordDamage(_StartPosition):
 	Globals.get_hit()
 	if Globals.player_dmg_taken == 6:
 		get_tree().change_scene_to_file("res://Level/Level_4.tscn")
+func CrystalDamage():
+	Globals.get_hit()
+	if Globals.player_dmg_taken == 12:
+		get_tree().change_scene_to_file("res://death_screen.tscn")
+func PortalTP():
+	Globals.get_hit()
+	if Globals.player_dmg_taken == 8:
+		get_tree().change_scene_to_file("res://Level/Level_5.tscn")
+	
