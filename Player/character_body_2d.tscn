@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://csikr4awb1vyv" path="res://Player/character_body_2d.gd" id="1_v8jqv"]
 [ext_resource type="Texture2D" uid="uid://c2wvi125jarqw" path="res://Images/runcycle1.png" id="2_amv1d"]
+[ext_resource type="Texture2D" uid="uid://bj16s5ldjfu0t" path="res://Images/idlepose1.png" id="2_ee7au"]
 [ext_resource type="Texture2D" uid="uid://tjimu201qfw3" path="res://Images/runcycle2.png" id="3_787ea"]
+[ext_resource type="Texture2D" uid="uid://ce6b6iqxcaok7" path="res://Images/idlepose2.png" id="3_rjd0h"]
 [ext_resource type="Texture2D" uid="uid://b5q8urwwqbdg" path="res://Images/runcycle3.png" id="4_c7av4"]
+[ext_resource type="Texture2D" uid="uid://bo34mittrook6" path="res://Images/idlepose3.png" id="4_jqiis"]
+[ext_resource type="Texture2D" uid="uid://cvofcjko1a0lj" path="res://Images/idlepose4.png" id="5_8anfh"]
 [ext_resource type="Texture2D" uid="uid://cs73ija7prtj1" path="res://Images/runcycle4.png" id="5_btcwg"]
 [ext_resource type="Texture2D" uid="uid://jcxtsojtiav4" path="res://Images/runcycle5.png" id="6_ee7au"]
 [ext_resource type="Texture2D" uid="uid://cy0hxru8upfvy" path="res://Images/runcycle6.png" id="7_rjd0h"]
@@ -16,6 +20,23 @@ height = 161.59999
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fa7w4"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ee7au")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rjd0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jqiis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8anfh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_amv1d")
@@ -59,4 +80,4 @@ debug_color = Color(0.28634495, 0.173441, 0.4204513, 0.41960785)
 position = Vector2(107.00001, -112)
 scale = Vector2(0.6828125, 0.719375)
 sprite_frames = SubResource("SpriteFrames_fa7w4")
-animation = &"run"
+animation = &"idle"
