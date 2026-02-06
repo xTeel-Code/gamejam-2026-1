@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cdmb1cjkacdus"]
 
+[ext_resource type="Texture2D" uid="uid://08fpyfhbrsks" path="res://2222.png" id="1_mwgvy"]
 [ext_resource type="Script" uid="uid://cuenpy74ige38" path="res://menu/audio_control.gd" id="1_w5bci"]
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="2_mwgvy"]
 
@@ -56,7 +57,8 @@ func _on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5bci"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qhaht"]
+texture = ExtResource("1_mwgvy")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_qhaht"]
 color = Color(1, 1, 1, 1)
@@ -136,7 +138,7 @@ text = "Quit"
 custom_minimum_size = Vector2(1000, 1000)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_w5bci")
+theme_override_styles/panel = SubResource("StyleBoxTexture_qhaht")
 
 [node name="Back" type="Button" parent="PanelContainer/Options" unique_id=1366763632]
 layout_mode = 1
