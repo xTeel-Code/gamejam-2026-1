@@ -194,6 +194,8 @@ func _on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
 "
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6iae"]
+
 [node name="Level3" type="Node2D" unique_id=434574265]
 script = ExtResource("1_t6iae")
 
@@ -270,7 +272,7 @@ scale = Vector2(0.6366637, 0.88115275)
 theme_override_colors/font_color = Color(0.605308, 0.825469, 0.34670925, 1)
 theme_override_fonts/font = ExtResource("29_rrxpp")
 theme_override_font_sizes/font_size = 60
-text = "are you afraid of HEIGHTS? Better be careful !!!!"
+text = "seems like you like BREAKING my game"
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -307,5 +309,10 @@ loop = true
 [node name="pause" parent="." unique_id=1949486921 instance=ExtResource("26_8yxu6")]
 z_as_relative = false
 script = SubResource("GDScript_b2ndw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=301957619]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1671007123]
+shape = SubResource("RectangleShape2D_t6iae")
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
