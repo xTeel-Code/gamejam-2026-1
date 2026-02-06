@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cuenpy74ige38" path="res://menu/audio_control.gd" id="1_w5bci"]
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="2_mwgvy"]
 [ext_resource type="AudioStream" uid="uid://otfp01t6qn4p" path="res://sfx/open.mp3" id="4_qhaht"]
+[ext_resource type="Script" uid="uid://td3870rahaq" path="res://pause/audio_control_2.gd" id="5_m0fkg"]
 
 [sub_resource type="GDScript" id="GDScript_ftery"]
 script/source = "extends Control
@@ -218,6 +219,7 @@ script = ExtResource("2_mwgvy")
 
 [node name="drop" type="AudioStreamPlayer" parent="PanelContainer/Options/Audio Control" unique_id=1751546303]
 stream = ExtResource("4_qhaht")
+bus = &"SFX"
 
 [node name="Audio Control2" type="HSlider" parent="PanelContainer/Options" unique_id=1093183622]
 custom_minimum_size = Vector2(500, 200)
@@ -232,7 +234,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_oaeo8")
 max_value = 1.0
 step = 0.05
 value = 1.0
-script = ExtResource("1_w5bci")
+script = ExtResource("5_m0fkg")
 audio_bus_name = "SFX"
 
 [node name="Label2" type="Label" parent="PanelContainer/Options/Audio Control2" unique_id=1850673048]
@@ -248,9 +250,11 @@ text = "SFX volume "
 
 [node name="drop" type="AudioStreamPlayer" parent="PanelContainer/Options/Audio Control2" unique_id=1804078417]
 stream = ExtResource("4_qhaht")
+bus = &"SFX"
 
 [node name="drop" type="AudioStreamPlayer" parent="." unique_id=1186127552]
 stream = ExtResource("4_qhaht")
+bus = &"SFX"
 
 [connection signal="pressed" from="PanelContainer/Pauza/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/Pauza/Restart" to="." method="_on_restart_pressed"]

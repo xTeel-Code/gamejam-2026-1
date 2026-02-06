@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx5owklqf1gwk"
-path="res://.godot/imported/jumpingpose2.png-101d3591c53ee7f2852936300b1f2e66.ctex"
+uid="uid://cl2y26j06pu1m"
+path="res://.godot/imported/door2.png-c5bf1e784d6f2a4786e98627bd1f91cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/jumpingpose2.png"
-dest_files=["res://.godot/imported/jumpingpose2.png-101d3591c53ee7f2852936300b1f2e66.ctex"]
+source_file="res://Images/door2.png"
+dest_files=["res://.godot/imported/door2.png-c5bf1e784d6f2a4786e98627bd1f91cb.ctex"]
 
 [params]
 

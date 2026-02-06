@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="5_mriae"]
 [ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="6_mriae"]
 [ext_resource type="AudioStream" uid="uid://otfp01t6qn4p" path="res://sfx/open.mp3" id="7_aq3mj"]
+[ext_resource type="Script" uid="uid://dspyimqaqfs1e" path="res://menu/audio_control_2.gd" id="7_lu4go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wugcc"]
 texture = ExtResource("2_mriae")
@@ -247,6 +248,7 @@ text = "music volume "
 
 [node name="drop" type="AudioStreamPlayer" parent="Options/Audio Control" unique_id=584277820]
 stream = ExtResource("7_aq3mj")
+bus = &"SFX"
 
 [node name="Fullscreen" type="CheckButton" parent="Options" unique_id=1821436365]
 layout_mode = 0
@@ -274,7 +276,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_3mro0")
 max_value = 1.0
 step = 0.05
 value = 1.0
-script = ExtResource("4_257up")
+script = ExtResource("7_lu4go")
 audio_bus_name = "SFX"
 
 [node name="Label2" type="Label" parent="Options/Audio Control2" unique_id=1174936806]
@@ -289,6 +291,7 @@ text = "SFX volume "
 
 [node name="drop" type="AudioStreamPlayer" parent="Options/Audio Control2" unique_id=939629951]
 stream = ExtResource("7_aq3mj")
+bus = &"SFX"
 
 [node name="AerisMovingMountains(freetouse_com)" type="AudioStreamPlayer" parent="." unique_id=1903395711]
 stream = ExtResource("6_mriae")
@@ -298,6 +301,7 @@ bus = &"Music"
 
 [node name="drop" type="AudioStreamPlayer" parent="." unique_id=1300102316]
 stream = ExtResource("7_aq3mj")
+bus = &"SFX"
 
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
