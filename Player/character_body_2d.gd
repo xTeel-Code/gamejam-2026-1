@@ -8,8 +8,12 @@ var heigt_before_jump = 0
 var height_before_land = 0
 var fall = 0
 var start_position : Vector2
+
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 @onready var run_sfx: AudioStreamPlayer = $run_sfx
+
+
+@onready var key = $"../Key"
 
 func _ready():
 	start_position = global_position
@@ -45,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		run_sfx.play()
-		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
