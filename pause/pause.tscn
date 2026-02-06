@@ -3,12 +3,14 @@
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="1_mwgvy"]
 [ext_resource type="Script" uid="uid://cuenpy74ige38" path="res://menu/audio_control.gd" id="1_w5bci"]
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="2_mwgvy"]
+[ext_resource type="AudioStream" uid="uid://otfp01t6qn4p" path="res://sfx/open.mp3" id="4_qhaht"]
 
 [sub_resource type="GDScript" id="GDScript_ftery"]
 script/source = "extends Control
 
 @onready var buttons: VBoxContainer = $PanelContainer/Pauza
 @onready var options: Panel = $PanelContainer/Options
+@onready var drop: AudioStreamPlayer = $drop
 
 func _ready():
 	hide()
@@ -19,11 +21,14 @@ func _ready():
 func pause():
 	get_tree().paused = true
 	show()
+	drop.play()
 	buttons.visible = true
 	options.visible = false
 	buttons.get_child(0).grab_focus()
+	
 
 func resume():
+	drop.play()
 	get_tree().paused = false
 	hide()
 
@@ -31,28 +36,35 @@ func _process(delta):
 	if Input.is_action_just_pressed(\"escape\"):
 		if options.visible:
 			_on_back_pressed()
+			
 		elif get_tree().paused:
 			resume()
+			
 		else:
 			pause()
 
 func _on_resume_pressed() -> void:
+	drop.play()
 	resume()
 
 func _on_options_pressed() -> void:
+	drop.play()
 	buttons.visible = false
 	options.visible = true
 	options.get_child(0).grab_focus()
 
 func _on_back_pressed() -> void:
+	drop.play()
 	options.visible = false
 	buttons.visible = true
 	buttons.get_child(0).grab_focus()
 
 func _on_quit_pressed() -> void:
+	drop.play()
 	get_tree().quit()
 
 func _on_restart_pressed() -> void:
+	drop.play()
 	resume()
 	get_tree().reload_current_scene()
 "
@@ -190,19 +202,22 @@ theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 text = "music volume "
 
-[node name="Fullscreen" type="CheckButton" parent="PanelContainer/Options" unique_id=616412838]
+[node name="Fullscreen" type="CheckButton" parent="PanelContainer/Options/Audio Control/Label2" unique_id=616412838]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 0
-offset_left = 17.0
-offset_top = 481.5
-offset_right = 517.0
-offset_bottom = 681.5
+offset_left = -11.0
+offset_top = 360.0
+offset_right = 489.0
+offset_bottom = 560.0
 scale = Vector2(1.5594354, 1.5594354)
 theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 button_pressed = true
 text = "fullscreen"
 script = ExtResource("2_mwgvy")
+
+[node name="drop" type="AudioStreamPlayer" parent="PanelContainer/Options/Audio Control" unique_id=1751546303]
+stream = ExtResource("4_qhaht")
 
 [node name="Audio Control2" type="HSlider" parent="PanelContainer/Options" unique_id=1093183622]
 custom_minimum_size = Vector2(500, 200)
@@ -231,11 +246,17 @@ theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 text = "SFX volume "
 
+[node name="drop" type="AudioStreamPlayer" parent="PanelContainer/Options/Audio Control2" unique_id=1804078417]
+stream = ExtResource("4_qhaht")
+
+[node name="drop" type="AudioStreamPlayer" parent="." unique_id=1186127552]
+stream = ExtResource("4_qhaht")
+
 [connection signal="pressed" from="PanelContainer/Pauza/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/Pauza/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/Pauza/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="PanelContainer/Pauza/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PanelContainer/Options/Back" to="." method="_on_back_pressed"]
 [connection signal="value_changed" from="PanelContainer/Options/Audio Control" to="PanelContainer/Options/Audio Control" method="_on_value_changed"]
-[connection signal="toggled" from="PanelContainer/Options/Fullscreen" to="PanelContainer/Options/Fullscreen" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/Options/Audio Control/Label2/Fullscreen" to="PanelContainer/Options/Audio Control/Label2/Fullscreen" method="_on_toggled"]
 [connection signal="value_changed" from="PanelContainer/Options/Audio Control2" to="PanelContainer/Options/Audio Control2" method="_on_value_changed"]

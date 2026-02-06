@@ -14,11 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://cvldh4lmi8kos" path="res://Images/healthbar/swordthorns3.png" id="12_3bagr"]
 [ext_resource type="Texture2D" uid="uid://dc8g33orhp7db" path="res://Images/healthbar/swordthorns4.png" id="13_6qpf1"]
 [ext_resource type="Texture2D" uid="uid://bp0hemih7c4ki" path="res://Images/healthbar/swordthorns5.png" id="14_5ylc0"]
-[ext_resource type="Script" path="res://Level/healthbar_2.gd" id="15_7xy2x"]
+[ext_resource type="Script" uid="uid://dkkvk8sekqcof" path="res://Level/healthbar_2.gd" id="15_7xy2x"]
 [ext_resource type="Texture2D" uid="uid://b15ixa08lk2fy" path="res://Images/healthbar/swordthorns6.png" id="15_bc0wh"]
+[ext_resource type="AudioStream" uid="uid://nagflyljcl5k" path="res://sfx/smruť.mp3" id="16_6qpf1"]
 [ext_resource type="Texture2D" uid="uid://jmsq20vmf1r5" path="res://Images/healthbar/swordthorns7.png" id="16_b725k"]
 [ext_resource type="Texture2D" uid="uid://cfqfob8a54u3w" path="res://Images/healthbar/swordthorns8.png" id="17_jhlv2"]
-[ext_resource type="AudioStream" uid="uid://bvmqpjhwc8mqk" path="res://hopskok.wav" id="17_wwjdc"]
+[ext_resource type="AudioStream" uid="uid://bvmqpjhwc8mqk" path="res://sfx/hopskok.wav" id="17_wwjdc"]
+[ext_resource type="AudioStream" uid="uid://dnohhb8xaejo" path="res://sfx/BEZIFAKT.mp3" id="18_3bagr"]
 [ext_resource type="Texture2D" uid="uid://l2sog1v7uasm" path="res://Images/healthbar/swordthorns9.png" id="18_wnion"]
 [ext_resource type="Texture2D" uid="uid://dt2tyjqe5g63a" path="res://Images/healthbar/swordthorns10.png" id="19_ceggk"]
 [ext_resource type="Texture2D" uid="uid://bl7bflx1e38qj" path="res://Images/healthbar/swordthorns11.png" id="20_fe5yt"]
@@ -93,6 +95,7 @@ script/source = "extends Control
 
 @onready var buttons: VBoxContainer = $PanelContainer/Pauza
 @onready var options: Panel = $PanelContainer/Options
+@onready var drop: AudioStreamPlayer = $drop
 
 func _ready():
 	hide()
@@ -103,11 +106,14 @@ func _ready():
 func pause():
 	get_tree().paused = true
 	show()
+	drop.play()
 	buttons.visible = true
 	options.visible = false
 	buttons.get_child(0).grab_focus()
+	
 
 func resume():
+	drop.play()
 	get_tree().paused = false
 	hide()
 
@@ -115,28 +121,35 @@ func _process(delta):
 	if Input.is_action_just_pressed(\"escape\"):
 		if options.visible:
 			_on_back_pressed()
+			
 		elif get_tree().paused:
 			resume()
+			
 		else:
 			pause()
 
 func _on_resume_pressed() -> void:
+	drop.play()
 	resume()
 
 func _on_options_pressed() -> void:
+	drop.play()
 	buttons.visible = false
 	options.visible = true
 	options.get_child(0).grab_focus()
 
 func _on_back_pressed() -> void:
+	drop.play()
 	options.visible = false
 	buttons.visible = true
 	buttons.get_child(0).grab_focus()
 
 func _on_quit_pressed() -> void:
+	drop.play()
 	get_tree().quit()
 
 func _on_restart_pressed() -> void:
+	drop.play()
 	resume()
 	get_tree().reload_current_scene()
 "
@@ -156,12 +169,19 @@ scale = Vector2(0.49399334, 0.5684786)
 sprite_frames = SubResource("SpriteFrames_ef6fe")
 script = ExtResource("15_7xy2x")
 
+[node name="death" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1646397227]
+stream = ExtResource("16_6qpf1")
+
 [node name="Player" parent="." unique_id=2050266436 instance=ExtResource("1_ggyr1")]
 position = Vector2(1343, -723.9998)
 scale = Vector2(0.2, 0.2)
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="Player" unique_id=352376727]
 stream = ExtResource("17_wwjdc")
+
+[node name="run_sfx" type="AudioStreamPlayer" parent="Player" unique_id=128115905]
+stream = ExtResource("18_3bagr")
+parameters/looping = true
 
 [node name="TileMapLayer" parent="." unique_id=1400714509 instance=ExtResource("2_oqwaf")]
 position = Vector2(-155, 0)
