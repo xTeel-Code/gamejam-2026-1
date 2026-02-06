@@ -3,6 +3,7 @@ extends Control
 @onready var buttons: VBoxContainer = $PanelContainer/Pauza
 @onready var options: Panel = $PanelContainer/Options
 @onready var drop: AudioStreamPlayer = $drop
+@onready var healthbar_2: AnimatedSprite2D = $Healthbar2
 
 func _ready():
 	hide()

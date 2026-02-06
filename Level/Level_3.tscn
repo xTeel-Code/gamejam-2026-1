@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://kv2ojyxq47vt"]
+[gd_scene format=4 uid="uid://bnmib0o28o5ko"]
 
 [ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_5beym"]
 [ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="2_16ae6"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_33mmq"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_llc6i"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_dhtre"]
+[ext_resource type="Texture2D" uid="uid://cxxkgkeh5p8jv" path="res://Images/spikes.png" id="31_16ae6"]
 
 [sub_resource type="GDScript" id="GDScript_ckrbt"]
 script/source = "extends Area2D
@@ -304,5 +305,10 @@ shape = SubResource("RectangleShape2D_fe5yt")
 stream = ExtResource("30_dhtre")
 volume_db = -9.123
 bus = &"SFX"
+
+[node name="Spikes" type="Sprite2D" parent="." unique_id=1841073920]
+position = Vector2(1042.0001, 682)
+scale = Vector2(0.3564411, 0.41242188)
+texture = ExtResource("31_16ae6")
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
