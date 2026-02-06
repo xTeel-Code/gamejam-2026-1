@@ -9,9 +9,13 @@ var height_before_land = 0
 var fall = 0
 var start_position : Vector2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 @onready var run_sfx: AudioStreamPlayer = $run_sfx
 
+=======
+@onready var key = $"../Key"
+>>>>>>> Stashed changes
 =======
 @onready var key = $"../Key"
 >>>>>>> Stashed changes
