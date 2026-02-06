@@ -27,7 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="25_6oog6"]
 [ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="26_oxdgu"]
 [ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="27_55ev3"]
-[ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_27ccs"]
+[ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_27ccs"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_1yxkr"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_va556"]
 [ext_resource type="VideoStream" uid="uid://dudeu2utiawep" path="res://Images/background.ogv" id="31_j6yox"]
@@ -95,45 +95,6 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="Animation" id="Animation_jhlv2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_wnion"]
-resource_name = "shiw"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ceggk"]
-_data = {
-&"RESET": SubResource("Animation_jhlv2"),
-&"shiw": SubResource("Animation_wnion")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe5yt"]
-size = Vector2(126, 198.5)
-
 [sub_resource type="GDScript" id="GDScript_b2ndw"]
 script/source = "extends Control
 
@@ -198,6 +159,45 @@ func _on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
 "
 
+[sub_resource type="Animation" id="Animation_jhlv2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wnion"]
+resource_name = "shiw"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ceggk"]
+_data = {
+&"RESET": SubResource("Animation_jhlv2"),
+&"shiw": SubResource("Animation_wnion")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe5yt"]
+size = Vector2(126, 198.5)
+
 [node name="Level4" type="Node2D" unique_id=434574265]
 script = ExtResource("1_j6yox")
 
@@ -245,6 +245,10 @@ position = Vector2(1225, -671)
 [node name="key" type="AudioStreamPlayer" parent="Key" unique_id=1918613743]
 stream = ExtResource("25_6oog6")
 bus = &"SFX"
+
+[node name="pause" parent="." unique_id=1949486921 instance=ExtResource("26_oxdgu")]
+visible = false
+script = SubResource("GDScript_b2ndw")
 
 [node name="AerisMovingMountains(freetouse_com)" type="AudioStreamPlayer" parent="." unique_id=1302504571]
 stream = ExtResource("27_55ev3")
@@ -306,9 +310,5 @@ volume_db = -80.0
 autoplay = true
 expand = true
 loop = true
-
-[node name="pause" parent="." unique_id=1949486921 instance=ExtResource("26_oxdgu")]
-visible = false
-script = SubResource("GDScript_b2ndw")
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
