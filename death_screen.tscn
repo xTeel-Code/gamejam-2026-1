@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cy07u87voaym7"]
 
-[ext_resource type="Texture2D" uid="uid://cedf85yp7nufh" path="res://Images/healthbar/umrel.jpg" id="1_if853"]
+[ext_resource type="Texture2D" uid="uid://ds8fdtdx53xb4" path="res://Images/healthbar/smrtfs.png" id="1_if853"]
 
 [node name="DeathScreen" type="Node2D" unique_id=1670214342]
 
