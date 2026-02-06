@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cr0hqpfhd1rmb" path="res://Images/runcycle9.png" id="9_8anfh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_amv1d"]
-radius = 31.199997
+radius = 39.399998
 height = 161.59999
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fa7w4"]

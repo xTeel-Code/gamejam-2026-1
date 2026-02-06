@@ -4,3 +4,4 @@ func _on_body_entered(body):
 		body.has_key = true
 		reparent(body)
 		position = Vector2(80, -20) 
+	print("h")
