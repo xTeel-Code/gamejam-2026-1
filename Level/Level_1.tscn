@@ -27,7 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://bl7bflx1e38qj" path="res://Images/healthbar/swordthorns11.png" id="20_fe5yt"]
 [ext_resource type="Texture2D" uid="uid://c3d31yof3bt00" path="res://Images/healthbar/swordthorns12.png" id="21_spqro"]
 [ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="24_5ylc0"]
-[ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_b725k"]
+[ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_b725k"]
+[ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_jhlv2"]
 
 [sub_resource type="GDScript" id="GDScript_ckrbt"]
 script/source = "extends Area2D
@@ -277,6 +278,7 @@ script = ExtResource("28_b725k")
 offset_top = 466.0
 offset_right = 318.0
 offset_bottom = 593.0
+theme_override_fonts/font = ExtResource("29_jhlv2")
 theme_override_font_sizes/font_size = 35
 text = "Sem NAPIS seck0 c0 chce naral0r"
 horizontal_alignment = 1
