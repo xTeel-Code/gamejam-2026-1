@@ -9,7 +9,6 @@ var height_before_land = 0
 var fall = 0
 
 func _physics_process(delta: float) -> void:
-	
 	if is_on_floor():
 		jump_counter = 0
 		height_before_land = position.y
@@ -28,12 +27,16 @@ func _physics_process(delta: float) -> void:
 		jump_counter += 1
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction > 0:
-		$Sprite2D.flip_h =true
+		$AnimatedSprite2D.flip_h =false
+		
 	elif direction < 0:
-		$Sprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = true
 	if direction:
 		velocity.x = direction * SPEED
+		$AnimatedSprite2D.play('run')
+		
 	else:
+		$AnimatedSprite2D.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
