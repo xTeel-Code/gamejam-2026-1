@@ -277,6 +277,7 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 script = ExtResource("7_lu4go")
+audio_bus_name = "SFX"
 
 [node name="Label2" type="Label" parent="Options/Audio Control2" unique_id=1174936806]
 layout_mode = 0
