@@ -5,5 +5,5 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		healthbar_2.Damage(body.start_position) 
+		healthbar_2.SwordDamage(body.start_position) 
 		print("ccs")
