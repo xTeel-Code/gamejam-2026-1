@@ -1,10 +1,9 @@
 extends Area2D
-@onready var key: AudioStreamPlayer = $key
 
-func _on_body_entered(body):
+@onready var healthbar_2: AnimatedSprite2D = %Healthbar2
+
+
+
+func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		key.play()
-		reparent(body)
-		position = Vector2(80, -20)
-		body.has_key = true 
-		
+		healthbar_2.SwordDamage(body.start_position) 
