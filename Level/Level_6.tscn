@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c2rgktnjsdw5g"]
 
 [ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_cvl67"]
-[ext_resource type="Script" path="res://Level/level_6.gd" id="1_itwcv"]
+[ext_resource type="Script" uid="uid://ftqkt444roiq" path="res://Level/level_6.gd" id="1_itwcv"]
 [ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="2_itwcv"]
 [ext_resource type="Texture2D" uid="uid://gnruy0m47d0f" path="res://Images/healthbar/swordthorns0.png" id="3_ol5kq"]
 [ext_resource type="Texture2D" uid="uid://wxy35p58aam4" path="res://Images/healthbar/swordthorns1.png" id="4_hqfpv"]
@@ -27,7 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="25_wdtdk"]
 [ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="26_idao1"]
 [ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="27_ctaus"]
-[ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_h3rne"]
+[ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_h3rne"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_gfpl6"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_evyd6"]
 [ext_resource type="VideoStream" uid="uid://dudeu2utiawep" path="res://Images/background.ogv" id="31_itwcv"]
