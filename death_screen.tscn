@@ -5,8 +5,8 @@
 [node name="DeathScreen" type="Node2D" unique_id=1670214342]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1540578946]
-position = Vector2(-1836, -811.75)
-scale = Vector2(12.54717, 11.210692)
+position = Vector2(-4256.8867, 235.33643)
+scale = Vector2(5.5301065, 5.0694222)
 texture = ExtResource("1_if853")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1609089217]

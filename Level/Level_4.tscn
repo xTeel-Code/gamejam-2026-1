@@ -38,10 +38,13 @@
 script/source = "extends Area2D
 @onready var door: AudioStreamPlayer = $door
 var counter = 0
+func _ready() -> void:
+	$\"../Portal\".hide()
 func _on_body_entered(body):
 	if body.name == \"Player\":
 		counter += 1
 	if counter == 3:
+		$\"../Portal\".show()
 		queue_free()
 "
 
@@ -298,10 +301,10 @@ bus = &"SFX"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1933933404]
 z_index = -1
-offset_left = -2757.0
-offset_top = -956.0
-offset_right = 1160.0
-offset_bottom = 796.0
+offset_left = -1969.0
+offset_top = -869.0
+offset_right = 1972.0
+offset_bottom = 883.0
 mouse_filter = 2
 stream = ExtResource("31_pbwjf")
 volume_db = -80.0
@@ -314,19 +317,19 @@ visible = false
 z_as_relative = false
 script = SubResource("GDScript_b2ndw")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=301957619]
+[node name="Portal" type="Area2D" parent="." unique_id=301957619]
 position = Vector2(-597, -367)
 scale = Vector2(2500, 2500)
 script = ExtResource("32_pbwjf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=321760823]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=321760823]
 position = Vector2(0.00039999187, 0.0025999993)
 shape = SubResource("RectangleShape2D_8hug2")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=373814804]
+[node name="Sprite2D" type="Sprite2D" parent="Portal" unique_id=373814804]
 position = Vector2(0.0011999886, 0.0021999981)
 scale = Vector2(0.00031666656, 0.00022708323)
 texture = ExtResource("33_8hug2")
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]

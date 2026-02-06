@@ -24,7 +24,7 @@ func resume():
 	get_tree().paused = false
 	hide()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("escape"):
 		if options.visible:
 			_on_back_pressed()

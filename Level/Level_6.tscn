@@ -31,20 +31,19 @@
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_gfpl6"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_evyd6"]
 [ext_resource type="VideoStream" uid="uid://dudeu2utiawep" path="res://Images/background.ogv" id="31_itwcv"]
-[ext_resource type="Script" uid="uid://de466yueg01ow" path="res://Level/mec_hitbox.gd" id="32_ol5kq"]
+[ext_resource type="Script" uid="uid://hexb4n1nw3yy" path="res://Level/crystal_1.gd" id="33_hqfpv"]
 
 [sub_resource type="GDScript" id="GDScript_ckrbt"]
 script/source = "extends Area2D
 @onready var door: AudioStreamPlayer = $door
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and body.has_key == true:
-		queue_free()
-		var key = body.get_node_or_null(\"Key\")
-		if key:
-			door.play()
-			key.queue_free()
-			get_tree().reload_current_scene()
+func breaking():
+	set_deferred(\"monitoring\", false)
+	set_deferred(\"monitorable\", false)
+	hide() 
+	door.play()
+	Globals.get_hit()
+	await door.finished
+	get_tree().change_scene_to_file(\"res://death_screen.tscn\")
 
 	
 "
@@ -162,7 +161,7 @@ func resume():
 	get_tree().paused = false
 	hide()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed(\"escape\"):
 		if options.visible:
 			_on_back_pressed()
@@ -315,21 +314,21 @@ visible = false
 script = SubResource("GDScript_b2ndw")
 
 [node name="Crystal3" type="Area2D" parent="." unique_id=58959581]
-script = ExtResource("32_ol5kq")
+script = ExtResource("33_hqfpv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crystal3" unique_id=566746749]
 position = Vector2(1831, 769.375)
 shape = SubResource("RectangleShape2D_hqfpv")
 
 [node name="Crystal2" type="Area2D" parent="." unique_id=1579366323]
-script = ExtResource("32_ol5kq")
+script = ExtResource("33_hqfpv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crystal2" unique_id=1383227454]
 position = Vector2(-358, 760.75)
 shape = SubResource("RectangleShape2D_hqfpv")
 
 [node name="Crystal1" type="Area2D" parent="." unique_id=873629204]
-script = ExtResource("32_ol5kq")
+script = ExtResource("33_hqfpv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crystal1" unique_id=1672996739]
 position = Vector2(-1328.25, 800)
