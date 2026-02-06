@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdusnbbraiyqq"
-path="res://.godot/imported/keyy.png-443eccba01e6c4293a2ed94590faaa68.ctex"
+uid="uid://d0vnhgd3scmg8"
+path="res://.godot/imported/smrrrrrrrrrrrd.png-d50032913c9334004ff7effda820b293.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/keyy.png"
-dest_files=["res://.godot/imported/keyy.png-443eccba01e6c4293a2ed94590faaa68.ctex"]
+source_file="res://Images/healthbar/smrrrrrrrrrrrd.png"
+dest_files=["res://.godot/imported/smrrrrrrrrrrrd.png-d50032913c9334004ff7effda820b293.ctex"]
 
 [params]
 
