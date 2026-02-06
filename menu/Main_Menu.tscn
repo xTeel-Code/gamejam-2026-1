@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cuenpy74ige38" path="res://menu/audio_control.gd" id="4_257up"]
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="5_mriae"]
 [ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="6_mriae"]
+[ext_resource type="AudioStream" uid="uid://otfp01t6qn4p" path="res://sfx/open.mp3" id="7_aq3mj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wugcc"]
 texture = ExtResource("2_mriae")
@@ -244,6 +245,9 @@ theme_override_fonts/font = ExtResource("2_gtid3")
 theme_override_font_sizes/font_size = 51
 text = "music volume "
 
+[node name="drop" type="AudioStreamPlayer" parent="Options/Audio Control" unique_id=584277820]
+stream = ExtResource("7_aq3mj")
+
 [node name="Fullscreen" type="CheckButton" parent="Options" unique_id=1821436365]
 layout_mode = 0
 offset_left = 67.0
@@ -283,11 +287,17 @@ theme_override_fonts/font = ExtResource("2_gtid3")
 theme_override_font_sizes/font_size = 50
 text = "SFX volume "
 
+[node name="drop" type="AudioStreamPlayer" parent="Options/Audio Control2" unique_id=939629951]
+stream = ExtResource("7_aq3mj")
+
 [node name="AerisMovingMountains(freetouse_com)" type="AudioStreamPlayer" parent="." unique_id=1903395711]
 stream = ExtResource("6_mriae")
 volume_db = -12.316
 autoplay = true
 bus = &"Music"
+
+[node name="drop" type="AudioStreamPlayer" parent="." unique_id=1300102316]
+stream = ExtResource("7_aq3mj")
 
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cy07u87voaym7"]
+
+[ext_resource type="Texture2D" uid="uid://cedf85yp7nufh" path="res://Images/healthbar/umrel.jpg" id="1_if853"]
+
+[node name="DeathScreen" type="Node2D" unique_id=1670214342]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1540578946]
+position = Vector2(-1836, -811.75)
+scale = Vector2(12.54717, 11.210692)
+texture = ExtResource("1_if853")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1609089217]
+zoom = Vector2(0.48, 0.6)
