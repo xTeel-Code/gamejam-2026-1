@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://5vu5h8khtatb"]
+[gd_scene format=4 uid="uid://b2pter1wyob7s"]
 
 [ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_reshf"]
 [ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="2_jfvpy"]
@@ -27,7 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="25_ml7k8"]
 [ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="26_48cqn"]
 [ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="27_gmvot"]
-[ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_lcgu8"]
+[ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_lcgu8"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_nfu0w"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_cahfq"]
 
@@ -209,6 +209,7 @@ stream = ExtResource("2_jfvpy")
 bus = &"SFX"
 
 [node name="Healthbar2" type="AnimatedSprite2D" parent="." unique_id=148839477]
+unique_name_in_owner = true
 process_mode = 4
 physics_interpolation_mode = 2
 position = Vector2(-1320.4639, -572.83746)
@@ -239,8 +240,7 @@ parameters/looping = true
 
 [node name="TileMapLayer" parent="." unique_id=1400714509 instance=ExtResource("22_lhcgh")]
 position = Vector2(-155, -1.9999999)
-scale = Vector2(0.4, 0.4)
-tile_map_data = PackedByteArray("AADk/o//AAAHAAoAAFDk/rv/AAAHAAoAAFDk/uX/AAAHAAoAAFDk/g8AAAAHAAoAAFDk/hAAAAAHAAoAAFDk/jkAAAAHAAoAAFD2/nj/AAAHAAoAACAe/3j/AAAHAAoAACBI/3j/AAAHAAoAACBw/3j/AAAHAAoAACCa/3j/AAAHAAoAACDC/3j/AAAHAAoAACDs/3j/AAAHAAoAACAUAHj/AAAHAAoAACA8AHj/AAAHAAoAACBkAHj/AAAHAAoAACCJAKP/AAAHAAoAAACbAJD/AAAHAAoAAGD2/ogAAAAHAAoAAAAh/4gAAAAHAAoAAABL/4gAAAAHAAoAAAB2/4gAAAAHAAoAAACh/4gAAAAHAAoAAADL/4gAAAAHAAoAAADy/4gAAAAHAAoAAAAdAIgAAAAHAAoAAABHAIgAAAAHAAoAAADk/mQAAAAHAAoAAFDk/pAAAAAHAAoAAFBIAYkAAAAHAAoAAABOAV4AAAAHAAoAAEBOAYkAAAAHAAoAAEDpAIkAAAAHAAoAAAATAYkAAAAHAAoAAAA5AYkAAAAHAAoAAABOAZL/AAAHAAoAAEBOAef/AAAHAAoAAEBOARIAAAAHAAoAAEBOATsAAAAHAAoAAECOAHj/AAAHAAoAACC2AHj/AAAHAAoAACDgAHf/AAAHAAoAACAIAXf/AAAHAAoAACAYAXf/AAAHAAoAACBAAXf/AAAHAAoAACDbAKH/AQAIAAQAAADDAIkAAAAHAAoAAACZAIkAAAAHAAoAAABuAIkAAAAHAAoAAADZ/1YAAAAHAAoAAACV/3AAAQAIAAQAABD//1YAAAAHAAoAAAAmAD0AAQAIAAQAAADmAAUAAAAHAAoAAAAOAQUAAAAHAAoAAABOAb3/AAAHAAoAAEDlANP/AQAIAAQAABA1Abv/AAAHAAoAAACyABoAAQAIAAQAAACbAOn/AAAHAAoAAABYANP/AQAIAAQAABB6AD0AAAAHAAoAAACNAE8AAAAHAAoAAFCNAHUAAAAHAAoAAFAMALn/AQAIAAQAAAC9/9b/AAAHAAoAAAA=")
+tile_map_data = PackedByteArray("AADk/o//AAAHAAoAAFDk/rv/AAAHAAoAAFDk/uX/AAAHAAoAAFDk/g8AAAAHAAoAAFDk/hAAAAAHAAoAAFDk/jkAAAAHAAoAAFD2/nj/AAAHAAoAACAe/3j/AAAHAAoAACBI/3j/AAAHAAoAACBw/3j/AAAHAAoAACCa/3j/AAAHAAoAACDC/3j/AAAHAAoAACDs/3j/AAAHAAoAACAUAHj/AAAHAAoAACA8AHj/AAAHAAoAACBkAHj/AAAHAAoAACCJAKP/AAAHAAoAAACbAJD/AAAHAAoAAGD2/ogAAAAHAAoAAAAh/4gAAAAHAAoAAABL/4gAAAAHAAoAAAB2/4gAAAAHAAoAAACh/4gAAAAHAAoAAADL/4gAAAAHAAoAAADy/4gAAAAHAAoAAAAdAIgAAAAHAAoAAABHAIgAAAAHAAoAAADk/mQAAAAHAAoAAFDk/pAAAAAHAAoAAFBIAYkAAAAHAAoAAABOAV4AAAAHAAoAAEBOAYkAAAAHAAoAAEDpAIkAAAAHAAoAAAATAYkAAAAHAAoAAAA5AYkAAAAHAAoAAABOAZL/AAAHAAoAAEBOAef/AAAHAAoAAEBOARIAAAAHAAoAAEBOATsAAAAHAAoAAECOAHj/AAAHAAoAACC2AHj/AAAHAAoAACDgAHf/AAAHAAoAACAIAXf/AAAHAAoAACAYAXf/AAAHAAoAACBAAXf/AAAHAAoAACDbAKH/AQAIAAQAAADDAIkAAAAHAAoAAACZAIkAAAAHAAoAAABuAIkAAAAHAAoAAACV/3AAAQAIAAQAABD//1YAAAAHAAoAAAAmAD0AAQAIAAQAAADmAAUAAAAHAAoAAAAOAQUAAAAHAAoAAABOAb3/AAAHAAoAAEDlANP/AQAIAAQAABA1Abv/AAAHAAoAAACyABoAAQAIAAQAAACbAOn/AAAHAAoAAABYANP/AQAIAAQAABB6AD0AAAAHAAoAAACNAE8AAAAHAAoAAFCNAHUAAAAHAAoAAFAMALn/AQAIAAQAAAC9/9b/AAAHAAoAAAAzAXEAAwA0ACUAAAB7AHIAAwA0ACUAAADZ/1YAAAAHAAoAAADk/0AAAwA0ACUAAAA=")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=424809203]
 zoom = Vector2(0.48, 0.6)
@@ -249,10 +249,9 @@ zoom = Vector2(0.48, 0.6)
 modulate = Color(0.7953939, 0.79539394, 0.7953939, 1)
 self_modulate = Color(0.81240565, 0.8124055, 0.8124055, 1)
 z_index = -4
-position = Vector2(-45.499878, 86)
-scale = Vector2(1.8, 1.2)
+position = Vector2(251.79984, 144.00002)
+scale = Vector2(3.8860939, 3)
 texture = ExtResource("23_2gqwe")
-metadata/_edit_lock_ = true
 
 [node name="Key" parent="." unique_id=1218176629 instance=ExtResource("24_qsq1s")]
 position = Vector2(1225, -671)
@@ -295,6 +294,7 @@ libraries/ = SubResource("AnimationLibrary_ceggk")
 speed_scale = 0.242
 
 [node name="Area2D" type="Area2D" parent="Node2D/Animaled_lexl" unique_id=62939070]
+position = Vector2(-57, 19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Animaled_lexl/Area2D" unique_id=1928331808]
 position = Vector2(-1543, 677)

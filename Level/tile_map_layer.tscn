@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhg6no1qmo2a0" path="res://Images/platform1.png" id="1_3ia7n"]
 [ext_resource type="Texture2D" uid="uid://ccwqhmfkqmdvd" path="res://Images/platform2.png" id="2_xts04"]
+[ext_resource type="Texture2D" uid="uid://cxxkgkeh5p8jv" path="res://Images/spikes.png" id="3_6d8e7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ye5du"]
 
@@ -17,6 +18,11 @@ texture = ExtResource("2_xts04")
 8:4/0 = 0
 8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-353.719, -17.190079, 336.5289, -9.917358, 353.71902, -0.6611481, 343.14047, 22.47934, 342.47934, 45.619843, 366.94217, 56.19835, 374.876, 78.67769, 365.61984, 104.462814, 343.80167, 105.78511, 339.8347, 124.95868, 159.99997, 126.942154, 116.36362, 138.84297, 79.33884, 124.958664, -348.42975, 124.297516, -376.8595, 108.42975, -378.84296, 14.545441)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_068wk"]
+texture = ExtResource("3_6d8e7")
+52:37/size_in_atlas = Vector2i(45, 38)
+52:37/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_twagh"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
@@ -24,6 +30,7 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_ye5du")
 physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_05d14")
 sources/1 = SubResource("TileSetAtlasSource_6d8e7")
+sources/3 = SubResource("TileSetAtlasSource_068wk")
 
 [node name="TileMapLayer" type="TileMapLayer" unique_id=1400714509]
 tile_map_data = PackedByteArray(0, 0, 29, 0, 15, 0, 0, 0, 7, 0, 10, 0, 0, 0, 101, 0, 33, 0, 0, 0, 7, 0, 10, 0, 0, 0, 173, 0, 7, 0, 0, 0, 7, 0, 10, 0, 0, 0)

@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cocupvx1iq18c"]
+[gd_scene format=4 uid="uid://nkdx6bepa4ll"]
 
 [ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_b2ndw"]
 [ext_resource type="PackedScene" uid="uid://phn6t8twewhc" path="res://Player/character_body_2d.tscn" id="1_ggyr1"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bl7bflx1e38qj" path="res://Images/healthbar/swordthorns11.png" id="20_fe5yt"]
 [ext_resource type="Texture2D" uid="uid://c3d31yof3bt00" path="res://Images/healthbar/swordthorns12.png" id="21_spqro"]
 [ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="24_5ylc0"]
-[ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_b725k"]
+[ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_b725k"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_jhlv2"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_wnion"]
 [ext_resource type="Script" uid="uid://de466yueg01ow" path="res://Level/mec_hitbox.gd" id="31_ceggk"]

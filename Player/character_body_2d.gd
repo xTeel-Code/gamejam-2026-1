@@ -1,5 +1,4 @@
 extends CharacterBody2D
-var health = 1
 var has_key = false
 const SPEED = 400.0
 const JUMP_VELOCITY = -460.0
@@ -8,6 +7,7 @@ var heigt_before_jump = 1000
 var height_before_land = 0
 var fall = 0
 var start_position : Vector2
+var health = 0
 
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 @onready var run_sfx: AudioStreamPlayer = $run_sfx
