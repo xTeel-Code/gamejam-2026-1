@@ -5,15 +5,25 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_186t8"]
 radius = 29.0
-height = 154.0
+height = 110.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2050266436]
 script = ExtResource("1_v8jqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1479040900]
+position = Vector2(-1, 19)
+shape = SubResource("CapsuleShape2D_186t8")
+debug_color = Color(0.28634495, 0.173441, 0.4204513, 0.41960785)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="CollisionShape2D" unique_id=910183989]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/RigidBody2D" unique_id=762740366]
+position = Vector2(-1, 19)
 shape = SubResource("CapsuleShape2D_186t8")
 debug_color = Color(0.28634495, 0.173441, 0.4204513, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=881698031]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_vvw5e")
+
+[connection signal="body_entered" from="CollisionShape2D/RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
