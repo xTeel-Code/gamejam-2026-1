@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cocupvx1iq18c"]
 
-[ext_resource type="PackedScene" path="res://Level/Door.tscn" id="1_b2ndw"]
+[ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_b2ndw"]
 [ext_resource type="PackedScene" uid="uid://phn6t8twewhc" path="res://Player/character_body_2d.tscn" id="1_ggyr1"]
 [ext_resource type="PackedScene" uid="uid://o8foele5h6u1" path="res://Level/tile_map_layer.tscn" id="2_oqwaf"]
 [ext_resource type="Texture2D" uid="uid://x4ov6a2danpx" path="res://Images/backgoundsceneee.png" id="3_oqwaf"]
@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://dnohhb8xaejo" path="res://sfx/BEZIFAKT.mp3" id="18_3bagr"]
 [ext_resource type="Texture2D" uid="uid://l2sog1v7uasm" path="res://Images/healthbar/swordthorns9.png" id="18_wnion"]
 [ext_resource type="Texture2D" uid="uid://dt2tyjqe5g63a" path="res://Images/healthbar/swordthorns10.png" id="19_ceggk"]
-[ext_resource type="PackedScene" uid="uid://b5cn6lakvj5sm" path="res://Level/key.tscn" id="19_ef6fe"]
+[ext_resource type="PackedScene" uid="uid://b3h41p4ixgcue" path="res://Level/key.tscn" id="19_ef6fe"]
 [ext_resource type="Texture2D" uid="uid://bl7bflx1e38qj" path="res://Images/healthbar/swordthorns11.png" id="20_fe5yt"]
 [ext_resource type="Texture2D" uid="uid://c3d31yof3bt00" path="res://Images/healthbar/swordthorns12.png" id="21_spqro"]
 
@@ -160,8 +160,8 @@ script = SubResource("GDScript_ckrbt")
 [node name="Healthbar2" type="AnimatedSprite2D" parent="." unique_id=148839477]
 process_mode = 4
 physics_interpolation_mode = 2
-position = Vector2(-1669.1501, -725.83746)
-scale = Vector2(0.49399334, 0.5684786)
+position = Vector2(-1513.15, -654.33746)
+scale = Vector2(1.0004874, 1.2592996)
 sprite_frames = SubResource("SpriteFrames_ef6fe")
 script = ExtResource("15_7xy2x")
 
@@ -169,8 +169,8 @@ script = ExtResource("15_7xy2x")
 stream = ExtResource("16_6qpf1")
 
 [node name="Player" parent="." unique_id=2050266436 instance=ExtResource("1_ggyr1")]
-position = Vector2(1343, -723.9998)
-scale = Vector2(0.2, 0.2)
+position = Vector2(577.00006, 737.9999)
+scale = Vector2(0.25, 0.25)
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="Player" unique_id=352376727]
 stream = ExtResource("17_wwjdc")

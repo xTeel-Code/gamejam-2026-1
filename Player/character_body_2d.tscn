@@ -71,13 +71,13 @@ animations = [{
 script = ExtResource("1_v8jqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1479040900]
-position = Vector2(0.99999994, -20.999998)
+position = Vector2(-14.999999, -21)
 scale = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_amv1d")
 debug_color = Color(0.28634495, 0.173441, 0.4204513, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1831977400]
-position = Vector2(107.00001, -112)
+position = Vector2(149, -114)
 scale = Vector2(0.6828125, 0.719375)
 sprite_frames = SubResource("SpriteFrames_fa7w4")
 animation = &"idle"
