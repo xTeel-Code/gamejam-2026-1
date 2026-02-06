@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8g7jsxgyb83d"
-path="res://.godot/imported/Nový projekt (2).png-9dd838484bd19a5fc8a1a52b85a4393d.ctex"
+uid="uid://bj16s5ldjfu0t"
+path="res://.godot/imported/idlepose1.png-8317e18be50149ed1ed502fb93e843b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level/Nový projekt (2).png"
-dest_files=["res://.godot/imported/Nový projekt (2).png-9dd838484bd19a5fc8a1a52b85a4393d.ctex"]
+source_file="res://Images/idlepose1.png"
+dest_files=["res://.godot/imported/idlepose1.png-8317e18be50149ed1ed502fb93e843b1.ctex"]
 
 [params]
 

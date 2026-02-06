@@ -8,8 +8,12 @@ var heigt_before_jump = 0
 var height_before_land = 0
 var fall = 0
 var start_position : Vector2
+<<<<<<< Updated upstream
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 
+=======
+@onready var key = $"../Key"
+>>>>>>> Stashed changes
 func _ready():
 	start_position = global_position
 func _physics_process(delta: float) -> void:

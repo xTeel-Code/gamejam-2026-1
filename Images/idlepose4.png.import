@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-uid="uid://bdusnbbraiyqq"
-=======
-uid="uid://cjohc248sd6t"
->>>>>>> Stashed changes
-path="res://.godot/imported/keyy.png-443eccba01e6c4293a2ed94590faaa68.ctex"
+uid="uid://cvofcjko1a0lj"
+path="res://.godot/imported/idlepose4.png-8e24bcdacbfd53dc11a0a05165d6916f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/keyy.png"
-dest_files=["res://.godot/imported/keyy.png-443eccba01e6c4293a2ed94590faaa68.ctex"]
+source_file="res://Images/idlepose4.png"
+dest_files=["res://.godot/imported/idlepose4.png-8e24bcdacbfd53dc11a0a05165d6916f.ctex"]
 
 [params]
 
