@@ -225,7 +225,7 @@ stream = ExtResource("18_b725k")
 bus = &"SFX"
 
 [node name="Player" parent="." unique_id=2050266436 instance=ExtResource("1_ggyr1")]
-position = Vector2(1347, -730)
+position = Vector2(443, 718)
 scale = Vector2(0.25, 0.25)
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="Player" unique_id=352376727]
