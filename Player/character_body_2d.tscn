@@ -93,4 +93,4 @@ debug_color = Color(0.28634495, 0.173441, 0.4204513, 0.41960785)
 position = Vector2(0, -114)
 scale = Vector2(0.68281245, 0.71937495)
 sprite_frames = SubResource("SpriteFrames_fa7w4")
-animation = &"run"
+animation = &"jump"
