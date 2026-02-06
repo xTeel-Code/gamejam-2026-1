@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://nhl6jtpkbas8" path="res://Level/area_2d.gd" id="4_4ouur"]
 [ext_resource type="Texture2D" uid="uid://n3b5tkdvnp1o" path="res://icon.svg" id="5_b2ndw"]
 [ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="6_b2ndw"]
+[ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="8_j7kct"]
 
 [sub_resource type="GDScript" id="GDScript_ckrbt"]
 script/source = "extends Area2D
@@ -121,6 +122,12 @@ shape = SubResource("CircleShape2D_ckrbt")
 [node name="pause" parent="." unique_id=1949486921 instance=ExtResource("6_b2ndw")]
 visible = false
 script = SubResource("GDScript_b2ndw")
+
+[node name="AerisMovingMountains(freetouse_com)" type="AudioStreamPlayer" parent="." unique_id=1302504571]
+stream = ExtResource("8_j7kct")
+volume_db = -12.316
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
 [connection signal="body_entered" from="Key" to="Key" method="_on_body_entered"]
