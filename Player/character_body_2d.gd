@@ -13,7 +13,6 @@ var health = 0
 @onready var run_sfx: AudioStreamPlayer = $run_sfx
 @onready var key = $"../Key"
 
-
 func _ready():
 	start_position = global_position
 	$"../Healthbar2".set_frame(Globals.player_dmg_taken)

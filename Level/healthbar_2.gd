@@ -8,7 +8,7 @@ var deaths = 2
 func FallDamage(StartPosition):
 	if Globals.is_falldmg_on == true:
 		deaths += 2
-	if Globals.player_dmg_taken < deaths:
+	if Globals.player_dmg_taken > 2:
 		$"../Player".global_position = StartPosition 
 		Globals.get_hit()
 		var main_level = get_tree().current_scene 

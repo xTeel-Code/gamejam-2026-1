@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="2_mwgvy"]
 [ext_resource type="AudioStream" uid="uid://otfp01t6qn4p" path="res://sfx/open.mp3" id="4_qhaht"]
 [ext_resource type="Script" uid="uid://dftiaxdufl0we" path="res://pause/falldamage.gd" id="5_m0fkg"]
-[ext_resource type="Script" path="res://pause/audio_control_2.gd" id="6_txy5i"]
+[ext_resource type="Script" uid="uid://td3870rahaq" path="res://pause/audio_control_2.gd" id="6_txy5i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5bci"]
 bg_color = Color(0, 0, 0, 0.3019608)
