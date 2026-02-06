@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="2_mwgvy"]
 [ext_resource type="AudioStream" uid="uid://otfp01t6qn4p" path="res://sfx/open.mp3" id="4_qhaht"]
 [ext_resource type="Script" uid="uid://dftiaxdufl0we" path="res://pause/falldamage.gd" id="5_m0fkg"]
+[ext_resource type="Script" uid="uid://td3870rahaq" path="res://pause/audio_control_2.gd" id="5_oaeo8"]
 
 [sub_resource type="GDScript" id="GDScript_ftery"]
 script/source = "extends Control
@@ -12,21 +13,13 @@ script/source = "extends Control
 @onready var buttons: VBoxContainer = $PanelContainer/Pauza
 @onready var options: Panel = $PanelContainer/Options
 @onready var drop: AudioStreamPlayer = $drop
-@onready var fullscreen: CheckButton = $\"PanelContainer/Options/Audio Control/Label2/Fullscreen\"
-
-var allow_fullscreen := false
 
 func _ready():
-	fullscreen.visible = allow_fullscreen
 	hide()
 	buttons.visible = true
 	options.visible = false
 	buttons.get_child(0).grab_focus()
-	
-func set_fullscreen_allowed(value: bool):
-	allow_fullscreen = value
-	fullscreen.visible = value
-	
+
 func pause():
 	get_tree().paused = true
 	show()
@@ -70,7 +63,7 @@ func _on_back_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	drop.play()
-	
+	get_tree().quit()
 
 func _on_restart_pressed() -> void:
 	drop.play()
@@ -183,6 +176,10 @@ theme_override_fonts/font = ExtResource("1_mwgvy")
 theme_override_font_sizes/font_size = 50
 text = "Back"
 
+[node name="drop" type="AudioStreamPlayer" parent="PanelContainer/Options/Back" unique_id=2125153897]
+stream = ExtResource("4_qhaht")
+bus = &"SFX"
+
 [node name="Audio Control" type="HSlider" parent="PanelContainer/Options" unique_id=973508666]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 0
@@ -241,6 +238,8 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_oaeo8")
 max_value = 1.0
 step = 0.05
 value = 1.0
+script = ExtResource("5_oaeo8")
+audio_bus_name = "SFX"
 
 [node name="Label2" type="Label" parent="PanelContainer/Options/Audio Control2" unique_id=1850673048]
 custom_minimum_size = Vector2(500, 200)

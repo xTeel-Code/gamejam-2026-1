@@ -1,91 +1,94 @@
-[gd_scene format=4 uid="uid://prohkk7hrxn1"]
+[gd_scene format=4 uid="uid://dsmq6em778r6d"]
 
-[ext_resource type="Script" uid="uid://pnmr5qbbicex" path="res://Level/level_1.gd" id="1_t6iae"]
-[ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_xrbht"]
-[ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="2_t6iae"]
-[ext_resource type="Texture2D" uid="uid://gnruy0m47d0f" path="res://Images/healthbar/swordthorns0.png" id="3_pbwjf"]
-[ext_resource type="Texture2D" uid="uid://wxy35p58aam4" path="res://Images/healthbar/swordthorns1.png" id="4_8hug2"]
-[ext_resource type="Texture2D" uid="uid://jtqsku8htfgr" path="res://Images/healthbar/swordthorns2.png" id="5_d228i"]
-[ext_resource type="Texture2D" uid="uid://cvldh4lmi8kos" path="res://Images/healthbar/swordthorns3.png" id="6_ra68v"]
-[ext_resource type="Texture2D" uid="uid://dc8g33orhp7db" path="res://Images/healthbar/swordthorns4.png" id="7_b46it"]
-[ext_resource type="Texture2D" uid="uid://bp0hemih7c4ki" path="res://Images/healthbar/swordthorns5.png" id="8_wm2mp"]
-[ext_resource type="Texture2D" uid="uid://b15ixa08lk2fy" path="res://Images/healthbar/swordthorns6.png" id="9_uv45e"]
-[ext_resource type="Texture2D" uid="uid://jmsq20vmf1r5" path="res://Images/healthbar/swordthorns7.png" id="10_d86dq"]
-[ext_resource type="Texture2D" uid="uid://cfqfob8a54u3w" path="res://Images/healthbar/swordthorns8.png" id="11_a46f6"]
-[ext_resource type="Texture2D" uid="uid://l2sog1v7uasm" path="res://Images/healthbar/swordthorns9.png" id="12_cymbl"]
-[ext_resource type="Texture2D" uid="uid://dt2tyjqe5g63a" path="res://Images/healthbar/swordthorns10.png" id="13_th8r1"]
-[ext_resource type="Texture2D" uid="uid://bl7bflx1e38qj" path="res://Images/healthbar/swordthorns11.png" id="14_fbeht"]
-[ext_resource type="Texture2D" uid="uid://c3d31yof3bt00" path="res://Images/healthbar/swordthorns12.png" id="15_trtbo"]
-[ext_resource type="Script" uid="uid://dkkvk8sekqcof" path="res://Level/healthbar_2.gd" id="16_0cfkt"]
-[ext_resource type="AudioStream" uid="uid://nagflyljcl5k" path="res://sfx/smruť.mp3" id="17_efy6y"]
-[ext_resource type="AudioStream" uid="uid://dess7q1kysrwm" path="res://sfx/wines.mp3" id="18_2ctr4"]
-[ext_resource type="PackedScene" uid="uid://phn6t8twewhc" path="res://Player/character_body_2d.tscn" id="19_eks65"]
-[ext_resource type="AudioStream" uid="uid://bvmqpjhwc8mqk" path="res://sfx/hopskok.wav" id="20_ivcg5"]
-[ext_resource type="AudioStream" uid="uid://dnohhb8xaejo" path="res://sfx/BEZIFAKT.mp3" id="21_wshhh"]
-[ext_resource type="PackedScene" uid="uid://o8foele5h6u1" path="res://Level/tile_map_layer.tscn" id="22_4rcls"]
-[ext_resource type="PackedScene" uid="uid://b3h41p4ixgcue" path="res://Level/key.tscn" id="24_gqrfg"]
-[ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="25_1hrnx"]
-[ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="26_8yxu6"]
-[ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="27_8yfc5"]
-[ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_sfi2n"]
-[ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_rrxpp"]
-[ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_frrbw"]
+[ext_resource type="Script" uid="uid://pnmr5qbbicex" path="res://Level/level_1.gd" id="1_flktw"]
+[ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="2_ww7gn"]
+[ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="3_e73r5"]
+[ext_resource type="Texture2D" uid="uid://gnruy0m47d0f" path="res://Images/healthbar/swordthorns0.png" id="4_ydrf4"]
+[ext_resource type="Texture2D" uid="uid://wxy35p58aam4" path="res://Images/healthbar/swordthorns1.png" id="5_xp2mw"]
+[ext_resource type="Texture2D" uid="uid://jtqsku8htfgr" path="res://Images/healthbar/swordthorns2.png" id="6_g7ddb"]
+[ext_resource type="Texture2D" uid="uid://cvldh4lmi8kos" path="res://Images/healthbar/swordthorns3.png" id="7_ti7ck"]
+[ext_resource type="Texture2D" uid="uid://dc8g33orhp7db" path="res://Images/healthbar/swordthorns4.png" id="8_c2ixu"]
+[ext_resource type="Texture2D" uid="uid://bp0hemih7c4ki" path="res://Images/healthbar/swordthorns5.png" id="9_4b6e0"]
+[ext_resource type="Texture2D" uid="uid://b15ixa08lk2fy" path="res://Images/healthbar/swordthorns6.png" id="10_18sda"]
+[ext_resource type="Texture2D" uid="uid://jmsq20vmf1r5" path="res://Images/healthbar/swordthorns7.png" id="11_1lk3g"]
+[ext_resource type="Texture2D" uid="uid://cfqfob8a54u3w" path="res://Images/healthbar/swordthorns8.png" id="12_i22lg"]
+[ext_resource type="Texture2D" uid="uid://l2sog1v7uasm" path="res://Images/healthbar/swordthorns9.png" id="13_0a20d"]
+[ext_resource type="Texture2D" uid="uid://dt2tyjqe5g63a" path="res://Images/healthbar/swordthorns10.png" id="14_ai5eu"]
+[ext_resource type="Texture2D" uid="uid://bl7bflx1e38qj" path="res://Images/healthbar/swordthorns11.png" id="15_v4bc6"]
+[ext_resource type="Texture2D" uid="uid://c3d31yof3bt00" path="res://Images/healthbar/swordthorns12.png" id="16_0okoi"]
+[ext_resource type="Script" uid="uid://dkkvk8sekqcof" path="res://Level/healthbar_2.gd" id="17_ellf3"]
+[ext_resource type="AudioStream" uid="uid://nagflyljcl5k" path="res://sfx/smruť.mp3" id="18_658hy"]
+[ext_resource type="AudioStream" uid="uid://dess7q1kysrwm" path="res://sfx/wines.mp3" id="19_y0r2e"]
+[ext_resource type="PackedScene" uid="uid://phn6t8twewhc" path="res://Player/character_body_2d.tscn" id="20_3lsby"]
+[ext_resource type="AudioStream" uid="uid://bvmqpjhwc8mqk" path="res://sfx/hopskok.wav" id="21_ncltr"]
+[ext_resource type="AudioStream" uid="uid://dnohhb8xaejo" path="res://sfx/BEZIFAKT.mp3" id="22_h0y8l"]
+[ext_resource type="PackedScene" uid="uid://o8foele5h6u1" path="res://Level/tile_map_layer.tscn" id="23_orijj"]
+[ext_resource type="PackedScene" uid="uid://b3h41p4ixgcue" path="res://Level/key.tscn" id="24_2dbgu"]
+[ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="25_fv7i3"]
+[ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="26_o22qk"]
+[ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="27_h31n5"]
+[ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_wkhg5"]
+[ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_ujjcr"]
+[ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_ffgv5"]
+[ext_resource type="VideoStream" uid="uid://dudeu2utiawep" path="res://Images/background.ogv" id="31_y2dko"]
 
 [sub_resource type="GDScript" id="GDScript_ckrbt"]
 script/source = "extends Area2D
 @onready var door: AudioStreamPlayer = $door
+@onready var bash: AudioStreamPlayer = $bash
+@onready var bang: AudioStreamPlayer = $bang
 
-
+var counter = 0
 func _on_body_entered(body):
-	if body.name == \"Player\" and body.has_key == true:
+	if body.name == \"Player\":
+		bash.play()
+		counter += 1
+	if counter == 3:
+		bang.play()
 		queue_free()
-		var key = body.get_node_or_null(\"Key\")
-		if key:
-			door.play()
-			key.queue_free()
-			get_tree().reload_current_scene()
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ef6fe"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_pbwjf")
+"texture": ExtResource("4_ydrf4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_8hug2")
+"texture": ExtResource("5_xp2mw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_d228i")
+"texture": ExtResource("6_g7ddb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ra68v")
+"texture": ExtResource("7_ti7ck")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_b46it")
+"texture": ExtResource("8_c2ixu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_wm2mp")
+"texture": ExtResource("9_4b6e0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_uv45e")
+"texture": ExtResource("10_18sda")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_d86dq")
+"texture": ExtResource("11_1lk3g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_a46f6")
+"texture": ExtResource("12_i22lg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_cymbl")
+"texture": ExtResource("13_0a20d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_th8r1")
+"texture": ExtResource("14_ai5eu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_fbeht")
+"texture": ExtResource("15_v4bc6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_trtbo")
+"texture": ExtResource("16_0okoi")
 }],
 "loop": true,
 "name": &"default",
@@ -197,16 +200,20 @@ _data = {
 size = Vector2(126, 198.5)
 
 [node name="Level3" type="Node2D" unique_id=434574265]
-script = ExtResource("1_t6iae")
+script = ExtResource("1_flktw")
 
-[node name="Door" parent="." unique_id=1837347098 instance=ExtResource("1_xrbht")]
+[node name="Door" parent="." unique_id=1837347098 instance=ExtResource("2_ww7gn")]
 position = Vector2(738, -690)
 scale = Vector2(168.095, 25.025)
 script = SubResource("GDScript_ckrbt")
 
 [node name="door" type="AudioStreamPlayer" parent="Door" unique_id=880202352]
-stream = ExtResource("2_t6iae")
+stream = ExtResource("3_e73r5")
 bus = &"SFX"
+
+[node name="bash" type="AudioStreamPlayer" parent="Door" unique_id=1948199021]
+
+[node name="bang" type="AudioStreamPlayer" parent="Door" unique_id=1533531420]
 
 [node name="Healthbar2" type="AnimatedSprite2D" parent="." unique_id=148839477]
 process_mode = 4
@@ -214,50 +221,50 @@ physics_interpolation_mode = 2
 position = Vector2(-1320.4639, -572.83746)
 scale = Vector2(1.6260918, 2.046739)
 sprite_frames = SubResource("SpriteFrames_ef6fe")
-script = ExtResource("16_0cfkt")
+script = ExtResource("17_ellf3")
 
 [node name="death" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1646397227]
-stream = ExtResource("17_efy6y")
+stream = ExtResource("18_658hy")
 bus = &"SFX"
 
 [node name="wines" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1627453427]
-stream = ExtResource("18_2ctr4")
+stream = ExtResource("19_y0r2e")
 bus = &"SFX"
 
-[node name="Player" parent="." unique_id=2050266436 instance=ExtResource("19_eks65")]
+[node name="Player" parent="." unique_id=2050266436 instance=ExtResource("20_3lsby")]
 position = Vector2(-1796, 722)
 scale = Vector2(0.25, 0.25)
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="Player" unique_id=352376727]
-stream = ExtResource("20_ivcg5")
+stream = ExtResource("21_ncltr")
 bus = &"SFX"
 
 [node name="run_sfx" type="AudioStreamPlayer" parent="Player" unique_id=128115905]
-stream = ExtResource("21_wshhh")
+stream = ExtResource("22_h0y8l")
 bus = &"SFX"
 parameters/looping = true
 
-[node name="TileMapLayer" parent="." unique_id=1400714509 instance=ExtResource("22_4rcls")]
+[node name="TileMapLayer" parent="." unique_id=1400714509 instance=ExtResource("23_orijj")]
 position = Vector2(-155, -1.9999999)
 scale = Vector2(0.4, 0.4)
-tile_map_data = PackedByteArray("AADk/o//AAAHAAoAAFDk/rv/AAAHAAoAAFDk/uX/AAAHAAoAAFDk/g8AAAAHAAoAAFDk/hAAAAAHAAoAAFDk/jkAAAAHAAoAAFD2/nj/AAAHAAoAACAe/3j/AAAHAAoAACBI/3j/AAAHAAoAACBw/3j/AAAHAAoAACCa/3j/AAAHAAoAACDC/3j/AAAHAAoAACDs/3j/AAAHAAoAACAUAHj/AAAHAAoAACA8AHj/AAAHAAoAACBkAHj/AAAHAAoAACCJAKP/AAAHAAoAAACbAJD/AAAHAAoAAGD2/ogAAAAHAAoAAAAh/4gAAAAHAAoAAABL/4gAAAAHAAoAAAB2/4gAAAAHAAoAAACh/4gAAAAHAAoAAADL/4gAAAAHAAoAAADy/4gAAAAHAAoAAAAdAIgAAAAHAAoAAABHAIgAAAAHAAoAAADk/mQAAAAHAAoAAFDk/pAAAAAHAAoAAFBIAYkAAAAHAAoAAABOAV4AAAAHAAoAAEBOAYkAAAAHAAoAAEDpAIkAAAAHAAoAAAATAYkAAAAHAAoAAAA5AYkAAAAHAAoAAABOAZL/AAAHAAoAAEBOAef/AAAHAAoAAEBOARIAAAAHAAoAAEBOATsAAAAHAAoAAECOAHj/AAAHAAoAACC2AHj/AAAHAAoAACDgAHf/AAAHAAoAACAIAXf/AAAHAAoAACAYAXf/AAAHAAoAACBAAXf/AAAHAAoAACDbAKH/AQAIAAQAAADDAIkAAAAHAAoAAACZAIkAAAAHAAoAAABuAIkAAAAHAAoAAADZ/1YAAAAHAAoAAACV/3AAAQAIAAQAABD//1YAAAAHAAoAAAAmAD0AAQAIAAQAAADmAAUAAAAHAAoAAAAOAQUAAAAHAAoAAABOAb3/AAAHAAoAAEDlANP/AQAIAAQAABA1Abv/AAAHAAoAAACyABoAAQAIAAQAAACbAOn/AAAHAAoAAABYANP/AQAIAAQAABB6AD0AAAAHAAoAAACNAE8AAAAHAAoAAFCNAHUAAAAHAAoAAFC9/9b/AAAHAAoAAAAPAKn/AQAIAAQAAAA=")
+tile_map_data = PackedByteArray("AADk/o//AAAHAAoAAFDk/rv/AAAHAAoAAFDk/uX/AAAHAAoAAFDk/g8AAAAHAAoAAFDk/hAAAAAHAAoAAFDk/jkAAAAHAAoAAFD2/nj/AAAHAAoAACAe/3j/AAAHAAoAACBI/3j/AAAHAAoAACBw/3j/AAAHAAoAACCa/3j/AAAHAAoAACDC/3j/AAAHAAoAACDs/3j/AAAHAAoAACAUAHj/AAAHAAoAACA8AHj/AAAHAAoAACBkAHj/AAAHAAoAACCJAKP/AAAHAAoAAACbAJD/AAAHAAoAAGD2/ogAAAAHAAoAAAAh/4gAAAAHAAoAAABL/4gAAAAHAAoAAAB2/4gAAAAHAAoAAACh/4gAAAAHAAoAAADL/4gAAAAHAAoAAADy/4gAAAAHAAoAAAAdAIgAAAAHAAoAAABHAIgAAAAHAAoAAADk/mQAAAAHAAoAAFDk/pAAAAAHAAoAAFBIAYkAAAAHAAoAAABOAV4AAAAHAAoAAEBOAYkAAAAHAAoAAEDpAIkAAAAHAAoAAAATAYkAAAAHAAoAAAA5AYkAAAAHAAoAAABOAZL/AAAHAAoAAEBOAef/AAAHAAoAAEBOARIAAAAHAAoAAEBOATsAAAAHAAoAAECOAHj/AAAHAAoAACC2AHj/AAAHAAoAACDgAHf/AAAHAAoAACAIAXf/AAAHAAoAACAYAXf/AAAHAAoAACBAAXf/AAAHAAoAACDbAKH/AQAIAAQAAADDAIkAAAAHAAoAAACZAIkAAAAHAAoAAABuAIkAAAAHAAoAAADZ/1YAAAAHAAoAAACV/3AAAQAIAAQAABD//1YAAAAHAAoAAAAmAD0AAQAIAAQAAADmAAUAAAAHAAoAAAAOAQUAAAAHAAoAAABOAb3/AAAHAAoAAEDlANP/AQAIAAQAABA1Abv/AAAHAAoAAACyABoAAQAIAAQAAACbAOn/AAAHAAoAAABYANP/AQAIAAQAABB6AD0AAAAHAAoAAACNAE8AAAAHAAoAAFCNAHUAAAAHAAoAAFC9/9b/AAAHAAoAAAAnALH/AQAIAAQAAAA=")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=424809203]
 zoom = Vector2(0.48, 0.6)
 
-[node name="Key" parent="." unique_id=1218176629 instance=ExtResource("24_gqrfg")]
+[node name="Key" parent="." unique_id=1218176629 instance=ExtResource("24_2dbgu")]
 position = Vector2(1225, -671)
 
 [node name="key" type="AudioStreamPlayer" parent="Key" unique_id=1918613743]
-stream = ExtResource("25_1hrnx")
+stream = ExtResource("25_fv7i3")
 bus = &"SFX"
 
-[node name="pause" parent="." unique_id=1949486921 instance=ExtResource("26_8yxu6")]
+[node name="pause" parent="." unique_id=1949486921 instance=ExtResource("26_o22qk")]
 visible = false
 script = SubResource("GDScript_b2ndw")
 
 [node name="AerisMovingMountains(freetouse_com)" type="AudioStreamPlayer" parent="." unique_id=1302504571]
-stream = ExtResource("27_8yfc5")
+stream = ExtResource("27_h31n5")
 volume_db = -12.316
 autoplay = true
 bus = &"Music"
@@ -265,7 +272,7 @@ bus = &"Music"
 [node name="Node2D" type="Node2D" parent="." unique_id=2067834708]
 
 [node name="Animaled_lexl" type="Node2D" parent="Node2D" unique_id=724777729]
-script = ExtResource("28_sfi2n")
+script = ExtResource("28_wkhg5")
 
 [node name="Label" type="Label" parent="Node2D/Animaled_lexl" unique_id=53886479]
 offset_left = -1882.0
@@ -274,7 +281,7 @@ offset_right = -703.9839
 offset_bottom = 563.0735
 scale = Vector2(0.6366637, 0.88115275)
 theme_override_colors/font_color = Color(0.605308, 0.825469, 0.34670925, 1)
-theme_override_fonts/font = ExtResource("29_rrxpp")
+theme_override_fonts/font = ExtResource("29_ujjcr")
 theme_override_font_sizes/font_size = 60
 text = "are you afraid of HEIGHTS? Better be careful !!!!"
 horizontal_alignment = 1
@@ -293,12 +300,20 @@ position = Vector2(-1543, 677)
 shape = SubResource("RectangleShape2D_fe5yt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D/Animaled_lexl" unique_id=855676231]
-stream = ExtResource("30_frrbw")
+stream = ExtResource("30_ffgv5")
 volume_db = -9.123
 bus = &"SFX"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1933933404]
-offset_right = 40.0
-offset_bottom = 40.0
+z_index = -1
+offset_left = -2017.0
+offset_top = -863.0
+offset_right = 1900.0
+offset_bottom = 889.0
+stream = ExtResource("31_y2dko")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
