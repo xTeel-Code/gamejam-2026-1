@@ -1,6 +1,6 @@
-[gd_scene format=4 uid="uid://cm5ad47lb8jy4"]
+[gd_scene format=4 uid="uid://prohkk7hrxn1"]
 
-[ext_resource type="Script" uid="uid://b4t88djv555eg" path="res://Level/level_4.gd" id="1_t6iae"]
+[ext_resource type="Script" uid="uid://pnmr5qbbicex" path="res://Level/level_1.gd" id="1_t6iae"]
 [ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_xrbht"]
 [ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="2_t6iae"]
 [ext_resource type="Texture2D" uid="uid://gnruy0m47d0f" path="res://Images/healthbar/swordthorns0.png" id="3_pbwjf"]
@@ -23,7 +23,6 @@
 [ext_resource type="AudioStream" uid="uid://bvmqpjhwc8mqk" path="res://sfx/hopskok.wav" id="20_ivcg5"]
 [ext_resource type="AudioStream" uid="uid://dnohhb8xaejo" path="res://sfx/BEZIFAKT.mp3" id="21_wshhh"]
 [ext_resource type="PackedScene" uid="uid://o8foele5h6u1" path="res://Level/tile_map_layer.tscn" id="22_4rcls"]
-[ext_resource type="Texture2D" uid="uid://x4ov6a2danpx" path="res://Images/backgoundsceneee.png" id="23_4x6ev"]
 [ext_resource type="PackedScene" uid="uid://b3h41p4ixgcue" path="res://Level/key.tscn" id="24_gqrfg"]
 [ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="25_1hrnx"]
 [ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="26_8yxu6"]
@@ -31,27 +30,19 @@
 [ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_sfi2n"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_rrxpp"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_frrbw"]
-[ext_resource type="Script" uid="uid://nhl6jtpkbas8" path="res://Level/area_2d.gd" id="31_pbwjf"]
-[ext_resource type="Texture2D" uid="uid://nkpnw22rmc40" path="res://Images/portal.png" id="31_t6iae"]
 
 [sub_resource type="GDScript" id="GDScript_ckrbt"]
 script/source = "extends Area2D
 @onready var door: AudioStreamPlayer = $door
-var counter = 0
-func breaking():
-	set_deferred(\"monitoring\", false)
-	set_deferred(\"monitorable\", false)
-	hide() 
-	door.play()
-	await door.finished
-	queue_free()
-	$\"../Node2D/Animaled_lexl/Label\".text = \"Oh what did you do to that door? Get the hell to the portal!!\"
-func _on_body_entered(body):
-	if body.name == \"Player\":
-		counter += 1
-	if counter >= 3:
-		breaking()
 
+func _on_body_entered(body):
+	if body.name == \"Player\" and body.has_key == true:
+		queue_free()
+		var key = body.get_node_or_null(\"Key\")
+		if key:
+			door.play()
+			key.queue_free()
+			get_tree().reload_current_scene()
 
 	
 "
@@ -111,6 +102,7 @@ script/source = "extends Control
 @onready var drop: AudioStreamPlayer = $drop
 
 func _ready():
+	
 	hide()
 	buttons.visible = true
 	options.visible = false
@@ -206,11 +198,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fe5yt"]
 size = Vector2(126, 198.5)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pbwjf"]
-radius = 0.45807505
-height = 3.4365635
-
-[node name="Level2" type="Node2D" unique_id=434574265]
+[node name="Level3" type="Node2D" unique_id=434574265]
 script = ExtResource("1_t6iae")
 
 [node name="Door" parent="." unique_id=1837347098 instance=ExtResource("1_xrbht")]
@@ -230,6 +218,14 @@ scale = Vector2(1.6260918, 2.046739)
 sprite_frames = SubResource("SpriteFrames_ef6fe")
 script = ExtResource("16_0cfkt")
 
+[node name="death" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1646397227]
+stream = ExtResource("17_efy6y")
+bus = &"SFX"
+
+[node name="wines" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1627453427]
+stream = ExtResource("18_2ctr4")
+bus = &"SFX"
+
 [node name="Player" parent="." unique_id=2050266436 instance=ExtResource("19_eks65")]
 position = Vector2(-1796, 722)
 scale = Vector2(0.25, 0.25)
@@ -246,19 +242,10 @@ parameters/looping = true
 [node name="TileMapLayer" parent="." unique_id=1400714509 instance=ExtResource("22_4rcls")]
 position = Vector2(-155, -1.9999999)
 scale = Vector2(0.4, 0.4)
-tile_map_data = PackedByteArray("AADk/o//AAAHAAoAAFDk/rv/AAAHAAoAAFDk/uX/AAAHAAoAAFDk/g8AAAAHAAoAAFDk/hAAAAAHAAoAAFDk/jkAAAAHAAoAAFD2/nj/AAAHAAoAACAe/3j/AAAHAAoAACBI/3j/AAAHAAoAACBw/3j/AAAHAAoAACCa/3j/AAAHAAoAACDC/3j/AAAHAAoAACDs/3j/AAAHAAoAACAUAHj/AAAHAAoAACA8AHj/AAAHAAoAACBkAHj/AAAHAAoAACCJAKP/AAAHAAoAAACbAJD/AAAHAAoAAGD2/ogAAAAHAAoAAAAh/4gAAAAHAAoAAABL/4gAAAAHAAoAAAB2/4gAAAAHAAoAAACh/4gAAAAHAAoAAADL/4gAAAAHAAoAAADy/4gAAAAHAAoAAAAdAIgAAAAHAAoAAABHAIgAAAAHAAoAAADk/mQAAAAHAAoAAFDk/pAAAAAHAAoAAFBIAYkAAAAHAAoAAABOAV4AAAAHAAoAAEBOAYkAAAAHAAoAAEDpAIkAAAAHAAoAAAATAYkAAAAHAAoAAAA5AYkAAAAHAAoAAABOAZL/AAAHAAoAAEBOAef/AAAHAAoAAEBOARIAAAAHAAoAAEBOATsAAAAHAAoAAECOAHj/AAAHAAoAACC2AHj/AAAHAAoAACDgAHf/AAAHAAoAACAIAXf/AAAHAAoAACAYAXf/AAAHAAoAACBAAXf/AAAHAAoAACDbAKH/AQAIAAQAAADDAIkAAAAHAAoAAACZAIkAAAAHAAoAAABuAIkAAAAHAAoAAADZ/1YAAAAHAAoAAACV/3AAAQAIAAQAABD//1YAAAAHAAoAAAAmAD0AAQAIAAQAAADmAAUAAAAHAAoAAAAOAQUAAAAHAAoAAABOAb3/AAAHAAoAAEDlANP/AQAIAAQAABA1Abv/AAAHAAoAAACyABoAAQAIAAQAAACbAOn/AAAHAAoAAABYANP/AQAIAAQAABB6AD0AAAAHAAoAAACNAE8AAAAHAAoAAFAMALn/AQAIAAQAAAC9/9b/AAAHAAoAAAA=")
+tile_map_data = PackedByteArray("AADk/o//AAAHAAoAAFDk/rv/AAAHAAoAAFDk/uX/AAAHAAoAAFDk/g8AAAAHAAoAAFDk/hAAAAAHAAoAAFDk/jkAAAAHAAoAAFD2/nj/AAAHAAoAACAe/3j/AAAHAAoAACBI/3j/AAAHAAoAACBw/3j/AAAHAAoAACCa/3j/AAAHAAoAACDC/3j/AAAHAAoAACDs/3j/AAAHAAoAACAUAHj/AAAHAAoAACA8AHj/AAAHAAoAACBkAHj/AAAHAAoAACCJAKP/AAAHAAoAAACbAJD/AAAHAAoAAGD2/ogAAAAHAAoAAAAh/4gAAAAHAAoAAABL/4gAAAAHAAoAAAB2/4gAAAAHAAoAAACh/4gAAAAHAAoAAADL/4gAAAAHAAoAAADy/4gAAAAHAAoAAAAdAIgAAAAHAAoAAABHAIgAAAAHAAoAAADk/mQAAAAHAAoAAFDk/pAAAAAHAAoAAFBIAYkAAAAHAAoAAABOAV4AAAAHAAoAAEBOAYkAAAAHAAoAAEDpAIkAAAAHAAoAAAATAYkAAAAHAAoAAAA5AYkAAAAHAAoAAABOAZL/AAAHAAoAAEBOAef/AAAHAAoAAEBOARIAAAAHAAoAAEBOATsAAAAHAAoAAECOAHj/AAAHAAoAACC2AHj/AAAHAAoAACDgAHf/AAAHAAoAACAIAXf/AAAHAAoAACAYAXf/AAAHAAoAACBAAXf/AAAHAAoAACDbAKH/AQAIAAQAAADDAIkAAAAHAAoAAACZAIkAAAAHAAoAAABuAIkAAAAHAAoAAADZ/1YAAAAHAAoAAACV/3AAAQAIAAQAABD//1YAAAAHAAoAAAAmAD0AAQAIAAQAAADmAAUAAAAHAAoAAAAOAQUAAAAHAAoAAABOAb3/AAAHAAoAAEDlANP/AQAIAAQAABA1Abv/AAAHAAoAAACyABoAAQAIAAQAAACbAOn/AAAHAAoAAABYANP/AQAIAAQAABB6AD0AAAAHAAoAAACNAE8AAAAHAAoAAFCNAHUAAAAHAAoAAFC9/9b/AAAHAAoAAAAPAKn/AQAIAAQAAAA=")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=424809203]
 zoom = Vector2(0.48, 0.6)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1721454059]
-modulate = Color(0.7953939, 0.79539394, 0.7953939, 1)
-self_modulate = Color(0.81240565, 0.8124055, 0.8124055, 1)
-z_index = -4
-position = Vector2(-45.499878, 86)
-scale = Vector2(1.8, 1.2)
-texture = ExtResource("23_4x6ev")
-metadata/_edit_lock_ = true
 
 [node name="Key" parent="." unique_id=1218176629 instance=ExtResource("24_gqrfg")]
 position = Vector2(1225, -671)
@@ -288,14 +275,14 @@ offset_top = 411.00003
 offset_right = -703.9839
 offset_bottom = 563.0735
 scale = Vector2(0.6366637, 0.88115275)
+theme_override_colors/font_color = Color(0.605308, 0.825469, 0.34670925, 1)
 theme_override_fonts/font = ExtResource("29_rrxpp")
-theme_override_font_sizes/font_size = 50
-text = "Seems like you like BREAKING my game"
+theme_override_font_sizes/font_size = 60
+text = "are you afraid of HEIGHTS? Better be careful !!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Animaled_lexl" unique_id=863568260]
 libraries/ = SubResource("AnimationLibrary_ceggk")
@@ -312,28 +299,8 @@ stream = ExtResource("30_frrbw")
 volume_db = -9.123
 bus = &"SFX"
 
-<<<<<<< Updated upstream
-[node name="death" type="AudioStreamPlayer" parent="." unique_id=1646397227]
-stream = ExtResource("17_efy6y")
-bus = &"SFX"
-
-[node name="wines" type="AudioStreamPlayer" parent="." unique_id=1627453427]
-stream = ExtResource("18_2ctr4")
-bus = &"SFX"
-=======
-[node name="Area2D" type="Area2D" parent="." unique_id=2011808313]
-position = Vector2(-550.99994, -356.00003)
-scale = Vector2(168.095, 25.025)
-script = ExtResource("31_pbwjf")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=697297633]
-position = Vector2(-0.15467478, -0.7592399)
-scale = Vector2(0.007832239, 0.031603802)
-texture = ExtResource("31_t6iae")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=6496788]
-position = Vector2(-0.053540707, -0.19979858)
-shape = SubResource("CapsuleShape2D_pbwjf")
->>>>>>> Stashed changes
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1933933404]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
