@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cocupvx1iq18c"]
 
-[ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_b2ndw"]
+[ext_resource type="PackedScene" path="res://Level/Door.tscn" id="1_b2ndw"]
 [ext_resource type="PackedScene" uid="uid://phn6t8twewhc" path="res://Player/character_body_2d.tscn" id="1_ggyr1"]
 [ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="2_bc0wh"]
 [ext_resource type="PackedScene" uid="uid://o8foele5h6u1" path="res://Level/tile_map_layer.tscn" id="2_oqwaf"]
@@ -164,6 +164,7 @@ script = SubResource("GDScript_ckrbt")
 
 [node name="door" type="AudioStreamPlayer" parent="Door" unique_id=880202352]
 stream = ExtResource("2_bc0wh")
+bus = &"SFX"
 
 [node name="Healthbar2" type="AnimatedSprite2D" parent="." unique_id=148839477]
 process_mode = 4
@@ -175,19 +176,23 @@ script = ExtResource("15_7xy2x")
 
 [node name="death" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1646397227]
 stream = ExtResource("16_6qpf1")
+bus = &"SFX"
 
 [node name="wines" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1627453427]
 stream = ExtResource("18_b725k")
+bus = &"SFX"
 
 [node name="Player" parent="." unique_id=2050266436 instance=ExtResource("1_ggyr1")]
-position = Vector2(577.00006, 737.9999)
+position = Vector2(1347, -730)
 scale = Vector2(0.25, 0.25)
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="Player" unique_id=352376727]
 stream = ExtResource("17_wwjdc")
+bus = &"SFX"
 
 [node name="run_sfx" type="AudioStreamPlayer" parent="Player" unique_id=128115905]
 stream = ExtResource("18_3bagr")
+bus = &"SFX"
 parameters/looping = true
 
 [node name="TileMapLayer" parent="." unique_id=1400714509 instance=ExtResource("2_oqwaf")]
@@ -212,6 +217,7 @@ position = Vector2(1225, -671)
 
 [node name="key" type="AudioStreamPlayer" parent="Key" unique_id=1918613743]
 stream = ExtResource("24_5ylc0")
+bus = &"SFX"
 
 [node name="pause" parent="." unique_id=1949486921 instance=ExtResource("6_b2ndw")]
 visible = false
