@@ -1,5 +1,6 @@
-[gd_scene format=4 uid="uid://5vu5h8khtatb"]
+[gd_scene format=4 uid="uid://dqwljg22ca8n3"]
 
+[ext_resource type="Script" uid="uid://b23x4nhghoe6a" path="res://Level/level_5.gd" id="1_jfvpy"]
 [ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_lfqxw"]
 [ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="2_q1oxm"]
 [ext_resource type="Texture2D" uid="uid://gnruy0m47d0f" path="res://Images/healthbar/swordthorns0.png" id="3_morbe"]
@@ -27,7 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="25_iutsk"]
 [ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="26_lx6ni"]
 [ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="27_tcrw0"]
-[ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_7ise3"]
+[ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_7ise3"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_yp3bd"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_8h3r4"]
 
@@ -203,7 +204,8 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fe5yt"]
 size = Vector2(126, 198.5)
 
-[node name="Level2" type="Node2D" unique_id=434574265]
+[node name="Level4" type="Node2D" unique_id=434574265]
+script = ExtResource("1_jfvpy")
 
 [node name="Door" parent="." unique_id=1837347098 instance=ExtResource("1_lfqxw")]
 position = Vector2(738, -690)
@@ -221,14 +223,6 @@ position = Vector2(-1320.4639, -572.83746)
 scale = Vector2(1.6260918, 2.046739)
 sprite_frames = SubResource("SpriteFrames_ef6fe")
 script = ExtResource("16_5wkw0")
-
-[node name="death" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1646397227]
-stream = ExtResource("17_pypml")
-bus = &"SFX"
-
-[node name="wines" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1627453427]
-stream = ExtResource("18_34q5r")
-bus = &"SFX"
 
 [node name="Player" parent="." unique_id=2050266436 instance=ExtResource("19_k4goq")]
 position = Vector2(-1796, 722)
@@ -310,6 +304,14 @@ shape = SubResource("RectangleShape2D_fe5yt")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D/Animaled_lexl" unique_id=855676231]
 stream = ExtResource("30_8h3r4")
 volume_db = -9.123
+bus = &"SFX"
+
+[node name="death" type="AudioStreamPlayer" parent="." unique_id=1646397227]
+stream = ExtResource("17_pypml")
+bus = &"SFX"
+
+[node name="wines" type="AudioStreamPlayer" parent="." unique_id=1627453427]
+stream = ExtResource("18_34q5r")
 bus = &"SFX"
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]

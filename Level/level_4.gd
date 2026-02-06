@@ -1,4 +1,6 @@
 extends Node2D
+
+
 @onready var death: AudioStreamPlayer = $death
 @onready var wines: AudioStreamPlayer = $wines
 func _ready() -> void:
