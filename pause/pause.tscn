@@ -12,13 +12,21 @@ script/source = "extends Control
 @onready var buttons: VBoxContainer = $PanelContainer/Pauza
 @onready var options: Panel = $PanelContainer/Options
 @onready var drop: AudioStreamPlayer = $drop
+@onready var fullscreen: CheckButton = $\"PanelContainer/Options/Audio Control/Label2/Fullscreen\"
+
+var allow_fullscreen := false
 
 func _ready():
+	fullscreen.visible = allow_fullscreen
 	hide()
 	buttons.visible = true
 	options.visible = false
 	buttons.get_child(0).grab_focus()
-
+	
+func set_fullscreen_allowed(value: bool):
+	allow_fullscreen = value
+	fullscreen.visible = value
+	
 func pause():
 	get_tree().paused = true
 	show()
@@ -62,7 +70,7 @@ func _on_back_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	drop.play()
-	get_tree().quit()
+	
 
 func _on_restart_pressed() -> void:
 	drop.play()

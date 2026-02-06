@@ -1,5 +1,6 @@
-[gd_scene format=4 uid="uid://dl0ns67fux0yp"]
+[gd_scene format=4 uid="uid://bcym0f8d8snp5"]
 
+[ext_resource type="Script" uid="uid://dqyxgh8oaiehi" path="res://Level/level.gd" id="1_j6yox"]
 [ext_resource type="PackedScene" uid="uid://cychwb6jlaph6" path="res://Level/Door.tscn" id="1_m86cp"]
 [ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="2_j6yox"]
 [ext_resource type="Texture2D" uid="uid://gnruy0m47d0f" path="res://Images/healthbar/swordthorns0.png" id="3_namii"]
@@ -27,7 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="25_6oog6"]
 [ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="26_oxdgu"]
 [ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="27_55ev3"]
-[ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_27ccs"]
+[ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_27ccs"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_1yxkr"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_va556"]
 
@@ -198,6 +199,7 @@ _data = {
 size = Vector2(126, 198.5)
 
 [node name="Level2" type="Node2D" unique_id=434574265]
+script = ExtResource("1_j6yox")
 
 [node name="Door" parent="." unique_id=1837347098 instance=ExtResource("1_m86cp")]
 position = Vector2(738, -690)
