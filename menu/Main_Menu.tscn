@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://3ml5fu27xyp7" path="res://menu/fullscreen.gd" id="5_mriae"]
 [ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="6_mriae"]
 [ext_resource type="AudioStream" uid="uid://otfp01t6qn4p" path="res://sfx/open.mp3" id="7_aq3mj"]
-[ext_resource type="Script" uid="uid://dspyimqaqfs1e" path="res://menu/audio_control_2.gd" id="7_lu4go"]
+[ext_resource type="Script" path="res://menu/audio_control_2.gd" id="7_lu4go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wugcc"]
 texture = ExtResource("2_mriae")
