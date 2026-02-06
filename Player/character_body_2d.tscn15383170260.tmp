@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cvofcjko1a0lj" path="res://Images/idlepose4.png" id="5_8anfh"]
 [ext_resource type="Texture2D" uid="uid://cs73ija7prtj1" path="res://Images/runcycle4.png" id="5_btcwg"]
 [ext_resource type="Texture2D" uid="uid://jcxtsojtiav4" path="res://Images/runcycle5.png" id="6_ee7au"]
-[ext_resource type="Texture2D" uid="uid://fy4t1l2278ge" path="res://Images/jumpingpose1.png" id="6_jqiis"]
-[ext_resource type="Texture2D" uid="uid://bx5owklqf1gwk" path="res://Images/jumpingpose2.png" id="7_8anfh"]
+[ext_resource type="Texture2D" uid="uid://dqrq5v5ylgnv4" path="res://Images/jumpingpose1.png" id="6_jqiis"]
+[ext_resource type="Texture2D" uid="uid://dvpgf6f2bxy5k" path="res://Images/jumpingpose2.png" id="7_8anfh"]
 [ext_resource type="Texture2D" uid="uid://cy0hxru8upfvy" path="res://Images/runcycle6.png" id="7_rjd0h"]
 [ext_resource type="Texture2D" uid="uid://bpbmmpyb1aowf" path="res://Images/runcycle7.png" id="8_jqiis"]
 [ext_resource type="Texture2D" uid="uid://cr0hqpfhd1rmb" path="res://Images/runcycle9.png" id="9_8anfh"]
@@ -84,13 +84,15 @@ animations = [{
 script = ExtResource("1_v8jqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1479040900]
-position = Vector2(0, -28)
+position = Vector2(-15, -21)
 scale = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_amv1d")
 debug_color = Color(0.28634495, 0.173441, 0.4204513, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1831977400]
-position = Vector2(0, -114)
+position = Vector2(148.99997, -113.99999)
 scale = Vector2(0.68281245, 0.71937495)
 sprite_frames = SubResource("SpriteFrames_fa7w4")
-animation = &"run"
+animation = &"jump"
+frame = 1
+frame_progress = 1.0
