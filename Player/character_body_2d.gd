@@ -58,4 +58,5 @@ func _physics_process(delta: float) -> void:
 		else:
 			$AnimatedSprite2D.play("idle")
 			run_sfx.stop() # Zastavíme zvuk behu, ak stojíme
-	move_and_slide()
+	if is_inside_tree():
+		move_and_slide()
