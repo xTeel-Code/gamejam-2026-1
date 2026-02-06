@@ -40,10 +40,10 @@ animations = [{
 "speed": 4.0
 }, {
 "frames": [{
-"duration": 0.85,
+"duration": 0.55,
 "texture": ExtResource("6_jqiis")
 }, {
-"duration": 1.0,
+"duration": 1.3,
 "texture": ExtResource("7_8anfh")
 }],
 "loop": false,

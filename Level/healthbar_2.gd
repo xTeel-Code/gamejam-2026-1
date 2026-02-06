@@ -25,7 +25,7 @@ func FallDamage(StartPosition):
 			get_tree().change_scene_to_file("res://Level/Level_6.tscn")
 		elif Globals.player_dmg_taken == 12:
 			get_tree().change_scene_to_file("res://death_screen.tscn")
-func SwordDamage(StartPosition):
+func SwordDamage(_StartPosition):
 	Globals.get_hit()
 	if Globals.player_dmg_taken == 6:
 		get_tree().change_scene_to_file("res://Level/Level_4.tscn")
