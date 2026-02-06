@@ -7,9 +7,7 @@ var KeyPosition : Vector2
 var deaths = 2
 func FallDamage(StartPosition):
 	if Globals.is_falldmg_on == true:
-		print("Deaths are on")
 		deaths += 2
-		print(deaths)
 	if Globals.player_dmg_taken < deaths:
 		$"../Player".global_position = StartPosition 
 		Globals.get_hit()

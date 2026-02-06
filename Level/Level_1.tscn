@@ -23,12 +23,11 @@
 [ext_resource type="AudioStream" uid="uid://bvmqpjhwc8mqk" path="res://sfx/hopskok.wav" id="20_jy412"]
 [ext_resource type="AudioStream" uid="uid://dnohhb8xaejo" path="res://sfx/BEZIFAKT.mp3" id="21_e70oy"]
 [ext_resource type="PackedScene" uid="uid://o8foele5h6u1" path="res://Level/tile_map_layer.tscn" id="22_r1r8q"]
-[ext_resource type="Texture2D" uid="uid://x4ov6a2danpx" path="res://Images/backgoundsceneee.png" id="23_p5jsf"]
 [ext_resource type="PackedScene" uid="uid://b3h41p4ixgcue" path="res://Level/key.tscn" id="24_368yv"]
 [ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="25_r1pd0"]
 [ext_resource type="PackedScene" uid="uid://cdmb1cjkacdus" path="res://pause/pause.tscn" id="26_pa4dw"]
 [ext_resource type="AudioStream" uid="uid://bd72kboqukdj1" path="res://Level/Aeris - Moving Mountains (freetouse.com).mp3" id="27_w5mdq"]
-[ext_resource type="Script" uid="uid://8iuajnelcefg" path="res://Level/animaled_lexl.gd" id="28_33mmq"]
+[ext_resource type="Script" path="res://Level/animaled_lexl.gd" id="28_33mmq"]
 [ext_resource type="FontFile" uid="uid://dbkm7sdh4knkb" path="res://menu/Rocky Block.otf" id="29_llc6i"]
 [ext_resource type="AudioStream" uid="uid://noji0fcpblcn" path="res://sfx/freesound_community-mamie_gibberish_2-95772.mp3" id="30_dhtre"]
 
@@ -248,15 +247,6 @@ tile_map_data = PackedByteArray("AADk/o//AAAHAAoAAFDk/rv/AAAHAAoAAFDk/uX/AAAHAAo
 [node name="Camera2D" type="Camera2D" parent="." unique_id=424809203]
 zoom = Vector2(0.48, 0.6)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1721454059]
-modulate = Color(0.7953939, 0.79539394, 0.7953939, 1)
-self_modulate = Color(0.81240565, 0.8124055, 0.8124055, 1)
-z_index = -4
-position = Vector2(-45.499878, 86)
-scale = Vector2(1.8, 1.2)
-texture = ExtResource("23_p5jsf")
-metadata/_edit_lock_ = true
-
 [node name="Key" parent="." unique_id=1218176629 instance=ExtResource("24_368yv")]
 position = Vector2(1225, -671)
 
@@ -308,5 +298,9 @@ shape = SubResource("RectangleShape2D_fe5yt")
 stream = ExtResource("30_dhtre")
 volume_db = -9.123
 bus = &"SFX"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1933933404]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
