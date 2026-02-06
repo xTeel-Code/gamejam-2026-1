@@ -10,6 +10,7 @@ var fall = 0
 var start_position : Vector2
 <<<<<<< Updated upstream
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
+@onready var run_sfx: AudioStreamPlayer = $run_sfx
 
 =======
 @onready var key = $"../Key"
@@ -47,6 +48,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play('run')
 		
 	else:
+		run_sfx.play()
 		$AnimatedSprite2D.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
