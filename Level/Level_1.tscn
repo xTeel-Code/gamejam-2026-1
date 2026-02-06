@@ -279,6 +279,7 @@ script = ExtResource("28_b725k")
 offset_top = 466.0
 offset_right = 318.0
 offset_bottom = 593.0
+scale = Vector2(0.6366637, 0.88115275)
 theme_override_fonts/font = ExtResource("29_jhlv2")
 theme_override_font_sizes/font_size = 35
 text = "Sem NAPIS seck0 c0 chce naral0r muahahhahahahahahahahhahahahahahahahahhahahahahahahgah"
@@ -300,5 +301,6 @@ shape = SubResource("RectangleShape2D_fe5yt")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D/Animaled_lexl" unique_id=855676231]
 stream = ExtResource("30_wnion")
 volume_db = -9.123
+bus = &"SFX"
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
