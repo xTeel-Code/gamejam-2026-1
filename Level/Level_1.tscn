@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://Level/Door.tscn" id="1_b2ndw"]
 [ext_resource type="PackedScene" uid="uid://phn6t8twewhc" path="res://Player/character_body_2d.tscn" id="1_ggyr1"]
+[ext_resource type="AudioStream" uid="uid://nncu64ijkdu7" path="res://sfx/dveře.mp3" id="2_bc0wh"]
 [ext_resource type="PackedScene" uid="uid://o8foele5h6u1" path="res://Level/tile_map_layer.tscn" id="2_oqwaf"]
 [ext_resource type="Texture2D" uid="uid://x4ov6a2danpx" path="res://Images/backgoundsceneee.png" id="3_oqwaf"]
 [ext_resource type="Script" uid="uid://nhl6jtpkbas8" path="res://Level/area_2d.gd" id="4_4ouur"]
@@ -21,19 +22,23 @@
 [ext_resource type="Texture2D" uid="uid://cfqfob8a54u3w" path="res://Images/healthbar/swordthorns8.png" id="17_jhlv2"]
 [ext_resource type="AudioStream" uid="uid://bvmqpjhwc8mqk" path="res://sfx/hopskok.wav" id="17_wwjdc"]
 [ext_resource type="AudioStream" uid="uid://dnohhb8xaejo" path="res://sfx/BEZIFAKT.mp3" id="18_3bagr"]
+[ext_resource type="AudioStream" uid="uid://dess7q1kysrwm" path="res://sfx/wines.mp3" id="18_b725k"]
 [ext_resource type="Texture2D" uid="uid://l2sog1v7uasm" path="res://Images/healthbar/swordthorns9.png" id="18_wnion"]
 [ext_resource type="Texture2D" uid="uid://dt2tyjqe5g63a" path="res://Images/healthbar/swordthorns10.png" id="19_ceggk"]
 [ext_resource type="Texture2D" uid="uid://bl7bflx1e38qj" path="res://Images/healthbar/swordthorns11.png" id="20_fe5yt"]
 [ext_resource type="Texture2D" uid="uid://c3d31yof3bt00" path="res://Images/healthbar/swordthorns12.png" id="21_spqro"]
+[ext_resource type="AudioStream" uid="uid://dhwp0inaqk3q" path="res://sfx/kluc.wav" id="24_5ylc0"]
 
 [sub_resource type="GDScript" id="GDScript_ckrbt"]
 script/source = "extends Area2D
+@onready var door: AudioStreamPlayer = $door
 
 func _on_body_entered(body):
 	if body.name == \"Player\" and body.has_key == true:
 		queue_free()
 		var key = body.get_node_or_null(\"Key\")
 		if key:
+			door.play()
 			key.queue_free()
 			get_tree().reload_current_scene()
 
@@ -161,6 +166,9 @@ position = Vector2(680.00006, -705)
 scale = Vector2(15, 15)
 script = SubResource("GDScript_ckrbt")
 
+[node name="door" type="AudioStreamPlayer" parent="Door" unique_id=880202352]
+stream = ExtResource("2_bc0wh")
+
 [node name="Healthbar2" type="AnimatedSprite2D" parent="." unique_id=148839477]
 process_mode = 4
 physics_interpolation_mode = 2
@@ -171,6 +179,9 @@ script = ExtResource("15_7xy2x")
 
 [node name="death" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1646397227]
 stream = ExtResource("16_6qpf1")
+
+[node name="wines" type="AudioStreamPlayer" parent="Healthbar2" unique_id=1627453427]
+stream = ExtResource("18_b725k")
 
 [node name="Player" parent="." unique_id=2050266436 instance=ExtResource("1_ggyr1")]
 position = Vector2(1343, -723.9998)
@@ -211,6 +222,9 @@ texture = ExtResource("5_b2ndw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=1167165645]
 position = Vector2(-3, 2)
 shape = SubResource("CircleShape2D_ckrbt")
+
+[node name="key" type="AudioStreamPlayer" parent="Key" unique_id=1918613743]
+stream = ExtResource("24_5ylc0")
 
 [node name="pause" parent="." unique_id=1949486921 instance=ExtResource("6_b2ndw")]
 visible = false
