@@ -33,23 +33,31 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jump_sfx.play()
-	if Input.is_action_just_pressed("ui_accept") and jump_counter == 0 and is_on_floor() == false: 
+	if Input.is_action_just_pressed("ui_accept") and jump_counter == 0 and is_on_floor() == false:
 		velocity.y = JUMP_VELOCITY
 		jump_sfx.play()
 		jump_counter += 1
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction > 0:
-		$AnimatedSprite2D.flip_h =false
+# 1. OTÁČANIE SPRITU (vždy funguje)
+	if direction != 0:
+		$AnimatedSprite2D.flip_h = (direction < 0)
+		$CollisionShape2D.position.x *= direction
 		
-	elif direction < 0:
-		$AnimatedSprite2D.flip_h = true
-	if direction:
-		velocity.x = direction * SPEED
-		$AnimatedSprite2D.play('run')
-		
+	if not is_on_floor():
+		if velocity.y < 0:
+			$AnimatedSprite2D.play("jump")
+		else:
+			$AnimatedSprite2D.play("jump") 
+			$AnimatedSprite2D.set_frame(1) 
 	else:
-		run_sfx.play()
-		$AnimatedSprite2D.play("idle")
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if direction != 0:
+			$AnimatedSprite2D.play("run")
+			velocity.x = direction * SPEED
+		else:
+			$AnimatedSprite2D.play("idle")
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+		if direction != 0 and is_on_floor() and not run_sfx.playing:
+			run_sfx.play()
+
 	
 	move_and_slide()
